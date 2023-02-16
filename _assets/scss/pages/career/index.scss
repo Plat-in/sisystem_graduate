@@ -1,0 +1,233 @@
+@charset "utf-8";
+@use "../../foundation/mixin" as m;
+@use "../../foundation/color" as c;
+
+.p-training {
+  padding-top: 150px;
+  @include m.mq(tab-l) {
+    padding-top: 130px;
+  }
+  @include m.mq(tab) {
+    padding-top: 110px;
+  }
+  @include m.mq(sm) {
+    padding-top: 70px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 445px;
+    background-color: #fff;
+    @include m.mq(tab-l) {
+      height: 395px;
+    }
+    @include m.mq(tab) {
+      height: 348px;
+    }
+    @include m.mq(sm) {
+      height: 215px;
+    }
+  }
+}
+.p-training__backImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  &::before {
+    @include m.filter;
+    background-color: rgba(c.$navy, 0.9);
+  }
+  .view & {
+    position: fixed;
+  }
+}
+.p-training__wrap {
+  margin-top: 140px;
+  padding: 130px 0;
+  @include m.mq(tab-l) {
+    margin-top: 120px;
+    padding: 120px 0;
+  }
+  @include m.mq(tab) {
+    margin-top: 100px;
+    padding: 100px 0;
+  }
+  @include m.mq(sm) {
+    margin-top: 60px;
+    padding: 70px 0;
+  }
+}
+.p-training__contents {
+  display: flex;
+  justify-content: space-between;
+  @include m.mq(s-t) {
+    flex-wrap: wrap;
+    gap: 40px 0;
+  }
+  &:nth-child(n + 2) {
+    margin-top: 120px;
+    @include m.mq(tab-l) {
+      margin-top: 110px;
+    }
+    @include m.mq(tab) {
+      margin-top: 900px;
+    }
+    @include m.mq(sm) {
+      margin-top: 80px;
+    }
+  }
+  &:nth-child(even) {
+    .p-training__desc {
+      order: 2;
+    }
+  }
+}
+.p-training__desc {
+  width: 50%;
+  @include m.mq(s-t) {
+    width: 100%;
+    order: 2;
+  }
+}
+.p-training__number {
+  font-size: 2rem;
+  line-height: 1;
+  color: c.$green;
+}
+.p-training__heading {
+  color: #fff;
+  font-size: 3rem;
+  line-height: 1.4;
+  margin-top: 65px;
+  @include m.mq(tab-l) {
+    font-size: 2.8rem;
+    margin-top: 55px;
+  }
+  @include m.mq(tab) {
+    font-size: 2.4rem;
+    margin-top: 44px;
+  }
+  @include m.mq(s-t) {
+    margin-top: 30px;
+  }
+  @include m.mq(sm) {
+    font-size: 2rem;
+    margin-top: 25px;
+  }
+}
+.p-training__text {
+  color: #fff;
+  margin-top: 20px;
+}
+.p-training__image {
+  width: 385px;
+  height: 450px;
+  @include m.mq(tab-l) {
+    width: 40%;
+    height: 40vw;
+  }
+  @include m.mq(s-t) {
+    width: 300px;
+    height: 340px;
+  }
+  @include m.mq(sm) {
+    width: 250px;
+    height: 300px;
+  }
+}
+
+.p-flow {
+  padding: 150px 0 160px;
+  z-index: 2;
+  @include m.mq(tab-l) {
+    padding: 130px 0 140px;
+  }
+  @include m.mq(tab) {
+    padding: 100px 0 130px;
+  }
+  @include m.mq(sm) {
+    padding: 60px 0 70px;
+  }
+}
+.p-flow__backImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  &::before {
+    @include m.filter;
+    background-color: rgba(#fff, 0.9);
+    z-index: 1;
+  }
+  .view & {
+    position: fixed;
+  }
+}
+.p-flow__image {
+  width: 645px;
+  margin: 45px auto 0;
+  position: relative;
+  z-index: 2;
+  @include m.mq(tab-l) {
+    margin-top: 40px;
+  }
+  @include m.mq(tab) {
+    width: 90%;
+    margin-top: 35px;
+  }
+  @include m.mq(sm) {
+    width: 100%;
+    margin-top: 25px;
+  }
+}
+
+.p-career {
+  padding: 150px 0 240px;
+  z-index: 3;
+  @include m.mq(tab-l) {
+    padding: 140px 0 210px;
+  }
+  @include m.mq(tab) {
+    padding: 120px 0 160px;
+  }
+  @include m.mq(sm) {
+    padding: 70px 0 90px;
+  }
+}
+.p-career__backImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  &::before {
+    @include m.filter;
+    background-color: rgba(c.$green, 0.9);
+    z-index: 1;
+  }
+  .view & {
+    position: fixed;
+  }
+}
+.p-career__image {
+  width: 100%;
+  margin-top: 45px;
+  @include m.mq(tab-l) {
+    margin-top: 40px;
+  }
+  @include m.mq(tab) {
+    margin-top: 35px;
+  }
+  @include m.mq(sm) {
+    margin-top: 25px;
+  }
+}

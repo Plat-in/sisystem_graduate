@@ -1,0 +1,761 @@
+@charset "utf-8";
+@use "../../foundation/mixin" as m;
+@use "../../foundation/color" as c;
+
+.l-main {
+  background-color: #f6f6f6;
+}
+.p-breadcrumbs {
+  position: relative;
+  background-color: #f6f6f6;
+  .c-inner {
+    z-index: 2;
+  }
+}
+.p-data {
+  padding: 140px 0;
+  background-color: #f6f6f6;
+  z-index: 1;
+  @include m.mq(tab-l) {
+    padding: 130px 0;
+  }
+  @include m.mq(tab) {
+    padding: 100px 0;
+  }
+  @include m.mq(sm) {
+    padding: 70px 0;
+  }
+}
+.p-data__backImage {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.p-data__wrap {
+  margin: 105px auto 0;
+  width: 780px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 110px 0;
+  @include m.mq(tab-l) {
+    margin-top: 95px;
+    gap: 100px 0;
+    width: 90%;
+  }
+  @include m.mq(tab) {
+    margin-top: 80px;
+    gap: 80px 0;
+    width: 100%;
+  }
+  @include m.mq(sm) {
+    margin-top: 60px;
+    gap: 60px 0;
+  }
+}
+.p-data__contents {
+  position: relative;
+  width: 325px;
+  height: 410px;
+  @include m.mq(tab) {
+    width: 300px;
+    max-width: 48%;
+    height: 350px;
+  }
+  @include m.mq(s-t) {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+  }
+  @include m.mq(sm) {
+    height: 230px;
+  }
+  &.--large {
+    width: 100%;
+    max-width: 100%;
+  }
+  &.establishment {
+    .p-data__icon {
+      width: 470px;
+      height: 275px;
+      @include m.mq(tab) {
+        width: 395px;
+        height: 230px;
+      }
+      @include m.mq(s-t) {
+        width: 330px;
+        height: 190px;
+      }
+      @include m.mq(sm) {
+        width: 220px;
+        height: 140px;
+      }
+      &.view {
+        img {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      img {
+        position: absolute;
+        opacity: 0;
+        transform: translateY(30px);
+        &:first-child {
+          width: 205px;
+          left: 0;
+          bottom: 0;
+          transition: opacity 0.6s 0.3s, transform 0.6s 0.3s;
+          @include m.mq(tab) {
+            width: 170px;
+          }
+          @include m.mq(s-t) {
+            width: 140px;
+          }
+          @include m.mq(sm) {
+            width: 100px;
+          }
+        }
+        &:nth-child(2) {
+          width: 300px;
+          right: 0;
+          top: 0;
+          transition: opacity 0.6s 0.5s, transform 0.6s 0.5s;
+          @include m.mq(tab) {
+            width: 260px;
+          }
+          @include m.mq(s-t) {
+            width: 215px;
+          }
+          @include m.mq(sm) {
+            width: 140px;
+          }
+        }
+      }
+    }
+  }
+  &.employee {
+    .p-data__icon {
+      @include m.mq(sm) {
+        right: 40px;
+      }
+    }
+  }
+  &.gender {
+    .p-data__icon {
+      @include m.mq(sm) {
+        right: 40px;
+      }
+    }
+    .p-data__number {
+      font-size: 10.4rem;
+      color: c.$navy;
+      display: flex;
+      align-items: center;
+      gap: 0 10px;
+      @include m.mq(tab) {
+        font-size: 9rem;
+      }
+      @include m.mq(s-t) {
+        font-size: 8rem;
+      }
+      .blue {
+        color: #2a77cb;
+        font-size: 15rem;
+        line-height: 1;
+        @include m.mq(tab) {
+          font-size: 13rem;
+        }
+        @include m.mq(s-t) {
+          font-size: 9rem;
+        }
+      }
+      .red {
+        color: #ff6262;
+        font-size: 15rem;
+        line-height: 1;
+        @include m.mq(tab) {
+          font-size: 13rem;
+        }
+        @include m.mq(s-t) {
+          font-size: 9rem;
+        }
+      }
+    }
+  }
+  &.age {
+    @include m.mq(sm) {
+      height: 300px;
+    }
+    .text {
+      border-bottom: 1px solid #000;
+      margin-bottom: 0;
+    }
+    .p-data__numbers {
+      display: table;
+      margin: 70px auto 0;
+      @include m.mq(tab) {
+        margin-top: 50px;
+      }
+      @include m.mq(s-t) {
+        margin-top: 30px;
+      }
+      @include m.mq(sm) {
+        margin-top: 20px;
+      }
+    }
+    .p-data__number {
+      font-size: 6.4rem;
+      color: c.$navy;
+      @include m.mq(tab) {
+        font-size: 6rem;
+      }
+    }
+    .p-data__numberText {
+      font-size: 2.4rem;
+      @include m.mq(tab) {
+        font-size: 2.2rem;
+      }
+    }
+    .p-data__box {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      gap: 0 10px;
+      margin-top: 25px;
+      @include m.mq(sm) {
+        margin-top: 20px;
+      }
+    }
+    .p-data__icon {
+      position: relative;
+      right: 0;
+      width: 165px;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.6s 0.3s, transform 0.6s 0.3s;
+      @include m.mq(tab-l) {
+        width: 52%;
+      }
+      @include m.mq(s-t) {
+        width: 160px;
+      }
+      &.view {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .p-data__item {
+      opacity: 0;
+      transition: opacity 0.6s;
+      &.view {
+        opacity: 1;
+      }
+    }
+    .p-data__item__text {
+      text-align: right;
+      &:nth-child(n + 2) {
+        margin-top: 12px;
+        @include m.mq(s-t) {
+          margin-top: 14px;
+        }
+      }
+    }
+    .p-data__percents {
+      position: absolute;
+      top: 7px;
+      right: 0;
+      width: 215px;
+      opacity: 0;
+      transition: opacity 0.6s 0.6s;
+      @include m.mq(tab-l) {
+        width: 63%;
+      }
+      @include m.mq(s-t) {
+        right: initial;
+        left: 100px;
+        width: 195px;
+      }
+      @include m.mq(sm) {
+        left: 108px;
+      }
+      &.view {
+        opacity: 1;
+      }
+    }
+    .p-data__percent {
+      font-size: 2.4rem;
+      line-height: 1;
+      display: table;
+      .c-fontEn {
+        font-size: 1.2rem;
+      }
+      &:first-child {
+        margin-left: 18px;
+      }
+      &:nth-child(2) {
+        color: #f9cf46;
+        font-size: 5.6rem;
+        margin-left: auto;
+        @include m.mq(tab-l) {
+          font-size: 5rem;
+          margin-top: 6px;
+        }
+        @include m.mq(tab) {
+          margin-top: 1vw;
+        }
+        @include m.mq(s-t) {
+        }
+        .c-fontEn {
+          font-size: 2.4rem;
+          color: #f9cf46;
+          @include m.mq(s-t) {
+            font-size: 2.2rem;
+          }
+        }
+      }
+      &:nth-child(3) {
+        margin: -5px 0 0 55px;
+        @include m.mq(tab-l) {
+          margin-top: -2px;
+        }
+        @include m.mq(s-t) {
+          margin: 5px 0 0 55px;
+        }
+      }
+      &:nth-child(4) {
+        margin-top: 8px;
+        @include m.mq(tab-l) {
+          margin-top: 15px;
+        }
+        @include m.mq(tab) {
+          margin-top: 1.4vw;
+        }
+        @include m.mq(s-t) {
+          margin-top: 12px;
+        }
+      }
+    }
+  }
+  &.division {
+    @include m.mq(sm) {
+      height: 270px;
+    }
+    .p-data__desc {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin-top: 75px;
+      @include m.mq(tab) {
+        margin-top: 50px;
+      }
+      @include m.mq(s-t) {
+        margin-top: 30px;
+      }
+      @include m.mq(sm) {
+        margin-top: 20px;
+      }
+    }
+    .p-data__icon {
+      width: 120px;
+      position: relative;
+      right: 0;
+      @include m.mq(tab) {
+        width: 110px;
+      }
+      @include m.mq(sm) {
+        width: 100px;
+      }
+    }
+    .p-data__box {
+      width: 220px;
+      height: 275px;
+      margin-left: -18px;
+      @include m.mq(tab) {
+        width: 190px;
+        height: 240px;
+        margin-left: -15px;
+      }
+      @include m.mq(sm) {
+        height: 210px;
+        width: 170px;
+      }
+      &.view {
+        .p-data__item {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+    .p-data__item {
+      display: table;
+      opacity: 0;
+      transform: translateY(20px);
+      &:first-child {
+        transition: opacity 0.6s 0.3s, transform 0.6s 0.3s;
+        .p-data__circle {
+          width: 130px;
+          height: 130px;
+          background-color: c.$green;
+          @include m.mq(tab) {
+            width: 110px;
+            height: 110px;
+          }
+          @include m.mq(sm) {
+            width: 90px;
+            height: 90px;
+          }
+        }
+        .p-data__number {
+          font-size: 6.4rem;
+          @include m.mq(tab) {
+            font-size: 6rem;
+          }
+          @include m.mq(sm) {
+            font-size: 5rem;
+          }
+        }
+        .p-data__numberText {
+          font-size: 2.4rem;
+          @include m.mq(tab) {
+            font-size: 2.2rem;
+          }
+          @include m.mq(sm) {
+            font-size: 2rem;
+          }
+        }
+      }
+      &:nth-child(2) {
+        transition: opacity 0.6s 0.6s, transform 0.6s 0.6s;
+        margin: -35px 0 0 auto;
+        .p-data__circle {
+          width: 70px;
+          height: 70px;
+          background-color: #87dac0;
+          @include m.mq(tab) {
+            width: 65px;
+            height: 65px;
+          }
+          @include m.mq(sm) {
+            width: 60px;
+            height: 60px;
+          }
+        }
+        .p-data__number {
+          font-size: 3rem;
+          @include m.mq(tab) {
+            font-size: 2.8rem;
+          }
+          @include m.mq(sm) {
+            font-size: 2.6rem;
+          }
+        }
+        .p-data__numberText {
+          font-size: 1.2rem;
+        }
+      }
+      &:nth-child(3) {
+        transition: opacity 0.6s 0.9s, transform 0.6s 0.9s;
+        margin: -20px 0 0 50px;
+        .p-data__circle {
+          width: 65px;
+          height: 65px;
+          background-color: #b6eedc;
+          @include m.mq(tab) {
+            width: 60px;
+            height: 60px;
+          }
+          @include m.mq(sm) {
+            width: 55px;
+            height: 55px;
+          }
+        }
+        .p-data__number {
+          font-size: 2.8rem;
+          @include m.mq(tab) {
+            font-size: 2.6rem;
+          }
+          @include m.mq(sm) {
+            font-size: 2.4rem;
+          }
+        }
+        .p-data__numberText {
+          font-size: 1rem;
+        }
+      }
+    }
+    .text {
+      text-align: center;
+      font-size: 1.4rem;
+    }
+    .p-data__circle {
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+    .p-data__number,
+    .p-data__numberText {
+      color: #fff;
+      line-height: 1;
+    }
+  }
+  &.project {
+    .p-data__icon {
+      width: 90px;
+      @include m.mq(tab) {
+        width: 80px;
+      }
+      @include m.mq(sm) {
+        width: 65px;
+        right: 60px;
+      }
+    }
+    .p-data__number {
+      font-size: 13rem;
+      @include m.mq(tab) {
+        font-size: 12rem;
+      }
+      @include m.mq(s-t) {
+        font-size: 9rem;
+      }
+    }
+  }
+  &.managementCareer {
+    .p-data__icon {
+      width: 165px;
+      @include m.mq(tab) {
+        width: 150px;
+      }
+      @include m.mq(sm) {
+        width: 130px;
+        right: 40px;
+      }
+    }
+  }
+  &.sales {
+    .p-data__icon {
+      width: 475px;
+      @include m.mq(tab) {
+        width: 450px;
+      }
+      @include m.mq(s-t) {
+        width: 70%;
+      }
+      @include m.mq(sm) {
+        width: 65%;
+      }
+    }
+  }
+}
+.p-data__title {
+  font-size: 2rem;
+  line-height: 1.4;
+  position: relative;
+  @include m.mq(sm) {
+    font-size: 1.8rem;
+  }
+}
+.p-data__line {
+  width: 100%;
+  margin-top: 10px;
+  @include m.mq(s-t) {
+    margin-top: 8px;
+  }
+}
+.p-data__numbers {
+  margin-top: 70px;
+  @include m.mq(tab) {
+    margin-top: 50px;
+  }
+  @include m.mq(s-t) {
+    margin-top: 30px;
+  }
+  @include m.mq(sm) {
+    margin-top: 20px;
+  }
+  .text {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: -8px;
+    @include m.mq(tab) {
+      margin-bottom: -6px;
+    }
+    @include m.mq(s-t) {
+      font-size: 1.8rem;
+      margin-bottom: -2px;
+    }
+    @include m.mq(sm) {
+      margin-bottom: 0;
+    }
+  }
+}
+.p-data__number {
+  font-size: 15rem;
+  line-height: 1;
+  color: c.$green;
+  @include m.mq(tab) {
+    font-size: 13rem;
+  }
+  @include m.mq(s-t) {
+    font-size: 9rem;
+  }
+}
+.p-data__numberText {
+  font-size: 3rem;
+  @include m.mq(tab) {
+    font-size: 2.6rem;
+  }
+  @include m.mq(s-t) {
+    font-size: 2.2rem;
+  }
+}
+.p-data__icon {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  width: 145px;
+  transition: opacity 0.6s 0.3s, transform 0.6s 0.3s;
+  @include m.mq(tab) {
+    width: 130px;
+  }
+}
+
+.p-lead {
+  margin: 70px auto 0;
+  display: table;
+  @include m.mq(tab-l) {
+    margin-top: 65px;
+  }
+  @include m.mq(tab) {
+    margin-top: 55px;
+  }
+  @include m.mq(sm) {
+    margin-top: 40px;
+  }
+}
+.p-list {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 50px 0;
+  @include m.mq(tab-l) {
+    margin-top: 70px;
+  }
+  @include m.mq(tab) {
+    margin-top: 60px;
+  }
+  @include m.mq(sm) {
+    margin-top: 50px;
+  }
+}
+.p-item {
+  width: 28.8%;
+  @include m.mq(tab-l) {
+    width: 30%;
+  }
+  @include m.mq(s-t) {
+    width: 47%;
+  }
+}
+.p-icon {
+  height: 130px;
+  @include m.mq(tab-l) {
+    height: 110px;
+  }
+  @include m.mq(tab) {
+    height: 90px;
+  }
+  @include m.mq(sm) {
+    height: 70px;
+  }
+  img {
+    margin: auto;
+  }
+}
+
+.p-system {
+  padding: 150px 0;
+  background-color: c.$navy;
+  z-index: 2;
+  @include m.mq(tab-l) {
+    padding: 130px 0;
+  }
+  @include m.mq(tab) {
+    padding: 100px 0;
+  }
+  @include m.mq(sm) {
+    padding: 70px 0;
+  }
+  .c-inner {
+    max-width: 900px;
+    @include m.mq(tab-l) {
+      width: 90%;
+    }
+  }
+  .p-lead {
+    color: #fff;
+  }
+}
+.p-system__backImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.05;
+  z-index: 2;
+  pointer-events: none;
+}
+.p-system__heading {
+  font-size: 2.4rem;
+  line-height: 1.4;
+  text-align: center;
+  color: #fff;
+  margin-top: 25px;
+  @include m.mq(tab) {
+    font-size: 2.2rem;
+  }
+  @include m.mq(sm) {
+    font-size: 2rem;
+    margin-top: 15px;
+  }
+}
+.p-system__text {
+  color: #fff;
+  margin-top: 8px;
+}
+
+.p-welfare {
+  padding: 150px 0;
+  z-index: 2;
+  @include m.mq(tab-l) {
+    padding: 130px 0;
+  }
+  @include m.mq(tab) {
+    padding: 100px 0;
+  }
+  @include m.mq(sm) {
+    padding: 70px 0;
+  }
+}
+.p-welfare__heading {
+  font-size: 2.4rem;
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 25px;
+  @include m.mq(tab) {
+    font-size: 2.2rem;
+  }
+  @include m.mq(sm) {
+    font-size: 2rem;
+    margin-top: 15px;
+  }
+}
+.p-welfare__text {
+  margin-top: 8px;
+}

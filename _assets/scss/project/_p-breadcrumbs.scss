@@ -1,0 +1,32 @@
+@charset "utf-8";
+@use "../foundation/mixin" as m;
+@use "../foundation/color" as c;
+
+.p-breadcrumbs {
+  padding-top: 15px;
+  background-color: #fff;
+}
+.p-breadcrumbs__link {
+  font-size: 1.4rem;
+  transition: color 0.3s;
+  margin-right: 6px;
+  &:hover {
+    color: c.$green;
+  }
+}
+.p-breadcrumbs__arrow {
+  margin-right: 6px;
+  font-size: 2rem;
+  line-height: 1;
+  color: #c4c4c4;
+  @include m.mq(tab) {
+    font-size: 1.8rem;
+  }
+  @include m.mq(sm) {
+    font-size: 1.6rem;
+  }
+}
+.p-breadcrumbs__text {
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+}

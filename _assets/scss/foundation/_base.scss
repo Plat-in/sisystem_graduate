@@ -1,0 +1,117 @@
+@charset "utf-8";
+@use "mixin" as m;
+
+@font-face {
+  font-family: fronteScript;
+  src: url("../fonts/fronteScript.woff") format("woff");
+  src: url("../fonts/fronteScript.woff2") format("woff2");
+}
+
+* {
+  letter-spacing: 0.06em;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  box-sizing: border-box;
+  color: #001731;
+  -webkit-appearance: none;
+  @include m.mq(tab) {
+    line-height: 1.65;
+  }
+}
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+html {
+  width: 100%;
+  /* ルートのフォントサイズを10pxに設定 */
+  font-size: 62.5%;
+  @include m.mq(tab-l) {
+    font-size: 61.5%;
+  }
+  @include m.mq(tab) {
+    font-size: 54.6%;
+  }
+  &.fadeout {
+    opacity: 0;
+  }
+}
+
+body {
+  margin: 0px;
+  overflow: hidden;
+  /* ルートのフォントサイズを1.6em（16pxと同等のサイズ）に設定 */
+  font-size: 1.6rem;
+  font-family: "Yu Gothic Pr6N R";
+}
+
+select,
+option,
+span {
+  font-family: "Yu Gothic Pr6N R";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Yu Gothic Pr6N R";
+  span {
+    font-family: "Yu Gothic Pr6N R";
+  }
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+p {
+  font-family: "Yu Gothic Pr6N R";
+}
+input[type="text"],
+textarea {
+  -webkit-appearance: none;
+  border: none;
+  font-family: -apple-system !important;
+}
+textarea {
+  resize: none;
+  font-family: "Yu Gothic Pr6N R";
+}
+button,
+select,
+input,
+a {
+  @include m.mq(tab-l) {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+button,
+select,
+input,
+input[type="submit"] {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  font-family: "Yu Gothic Pr6N R";
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+img {
+  display: block;
+  height: auto;
+}
+
+section {
+  position: relative;
+}

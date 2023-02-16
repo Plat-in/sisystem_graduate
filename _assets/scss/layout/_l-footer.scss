@@ -1,0 +1,133 @@
+@charset "utf-8";
+@use "../foundation/mixin" as m;
+@use "../foundation/color" as c;
+
+.l-footer {
+  position: relative;
+  background-color: #0c1e2c;
+  padding: 110px 0 20px;
+  z-index: 5;
+  @include m.mq(tab-l) {
+    padding: 100px 0 20px;
+  }
+  @include m.mq(tab) {
+    padding: 80px 0 20px;
+  }
+  @include m.mq(sm) {
+    padding: 65px 0 20px;
+  }
+}
+.l-footer__wrap {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 60px;
+  @include m.mq(tab-l) {
+    width: 95%;
+  }
+  @include m.mq(tab) {
+    flex-wrap: wrap;
+    gap: 40px 0;
+  }
+  @include m.mq(sm) {
+    margin-bottom: 55px;
+  }
+}
+.l-footer__info {
+  @include m.mq(sm) {
+    width: 100%;
+  }
+}
+.l-footer__logo {
+  width: 175px;
+  display: block;
+  line-height: 1;
+}
+.l-footer__logo__text {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: c.$blue;
+  font-weight: bold;
+  @include m.mq(sm) {
+    font-size: 1rem;
+  }
+}
+.l-footer__corporate {
+  position: relative;
+  width: 175px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 6px;
+  margin-top: 20px;
+  border: 1px solid c.$blue;
+  @include m.mq(tab-l) {
+    width: 320px;
+    height: 75px;
+  }
+  @include m.mq(tab) {
+    width: 290px;
+    height: 65px;
+  }
+  @include m.mq(s-t) {
+    height: 60px;
+  }
+  @include m.mq(sm) {
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgba(c.$blue, 0.4);
+    transition: width 0.3s;
+  }
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+.l-footer__corporate__text {
+  color: c.$blue;
+  font-size: 1.4rem;
+  z-index: 1;
+  text-align: center;
+}
+.l-footer__icon {
+  width: 20px;
+  height: 12px;
+}
+.l-footer__list {
+  width: 655px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px 90px;
+}
+.l-footer__link {
+  color: #fff;
+  &:hover {
+    color: c.$green;
+  }
+}
+.l-footer__copy {
+  text-align: right;
+  padding: 10px 0;
+  @include m.mq(sm) {
+    padding: 8px 0;
+  }
+  small {
+    font-size: 1.4rem;
+    color: #6d6d6d;
+    @include m.mq(sm-se) {
+      font-size: 1.2rem;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@charset "utf-8";
+@use "../foundation/mixin" as m;
+@use "../foundation/color" as c;
+
+.c-button {
+  width: 145px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  margin-left: auto;
+  @include m.mq(tab-l) {
+    width: 135px;
+  }
+  @include m.mq(tab) {
+    width: 130px;
+  }
+  @include m.mq(sm) {
+    width: 110px;
+    font-size: 1.8rem;
+  }
+  &:hover {
+    .c-button__square {
+      transform: rotate(45deg);
+    }
+  }
+}
+.c-button__arrow {
+  position: absolute;
+  @include m.centerY;
+  left: -35px;
+  display: block;
+  width: 155px;
+  height: 1px;
+  background-color: #fff;
+  z-index: 2;
+  @include m.mq(tab-l) {
+    width: 150px;
+  }
+  @include m.mq(tab) {
+    width: 140px;
+    left: -30px;
+  }
+  @include m.mq(sm) {
+    width: 115px;
+    left: -25px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    @include m.centerY;
+    background-color: #fff;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    width: 10px;
+    height: 14px;
+    @include m.mq(tab) {
+      width: 8px;
+      height: 12px;
+    }
+  }
+}
+.c-button__square {
+  width: 60px;
+  height: 60px;
+  background-color: c.$orange;
+  transition: transform 0.3s;
+  @include m.mq(tab-l) {
+    width: 55px;
+    height: 55px;
+  }
+  @include m.mq(tab) {
+    width: 50px;
+    height: 50px;
+  }
+  @include m.mq(sm) {
+    width: 45px;
+    height: 45px;
+  }
+}

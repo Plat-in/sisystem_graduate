@@ -1,0 +1,17 @@
+@charset "utf-8";
+@use "../foundation/mixin" as m;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+.c-fontEn {
+  font-family: "Montserrat", sans-serif;
+  &.--bold {
+    font-weight: 600;
+  }
+}
+
+.c-fronteScript {
+  font-family: fronteScript;
+}
+.c-bold {
+  font-family: "Yu Gothic Pr6N B";
+}

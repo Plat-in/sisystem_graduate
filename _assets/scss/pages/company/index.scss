@@ -1,0 +1,365 @@
+@charset "utf-8";
+@use "../../foundation/mixin" as m;
+@use "../../foundation/color" as c;
+
+.p-philosophy {
+  padding-top: 140px;
+  @include m.mq(tab-l) {
+    padding-top: 130px;
+  }
+  @include m.mq(tab) {
+    padding-top: 100px;
+  }
+  @include m.mq(sm) {
+    padding-top: 70px;
+  }
+}
+.p-philosophy__lead {
+  width: 780px;
+  margin: 55px auto 0;
+  @include m.mq(tab-l) {
+    width: 80%;
+  }
+  @include m.mq(tab) {
+    width: 90%;
+  }
+  @include m.mq(sm) {
+    width: 100%;
+  }
+}
+.p-philosophy__list {
+  display: flex;
+  margin-top: 80px;
+  justify-content: space-between;
+  @include m.mq(tab-l) {
+    margin-top: 70px;
+  }
+  @include m.mq(tab) {
+    margin-top: 60px;
+  }
+  @include m.mq(s-t) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px 0;
+  }
+  @include m.mq(sm) {
+    margin-top: 50px;
+  }
+}
+.p-philosophy__item {
+  width: 28.3%;
+  @include m.mq(tab) {
+    width: 30%;
+  }
+  @include m.mq(s-t) {
+    width: 400px;
+  }
+  @include m.mq(sm) {
+    width: 100%;
+  }
+}
+.p-philosophy__title {
+  font-size: 4rem;
+  line-height: 1.2;
+  text-align: center;
+  @include m.mq(tab) {
+    font-size: 3.6rem;
+  }
+  .ja {
+    display: block;
+    text-align: center;
+    font-size: 1.6rem;
+  }
+}
+.p-philosophy__image {
+  height: 225px;
+  margin-top: 20px;
+  @include m.mq(tab-l) {
+    height: 20vw;
+  }
+  @include m.mq(tab) {
+    height: 22vw;
+  }
+  @include m.mq(s-t) {
+    height: 265px;
+  }
+  @include m.mq(sm) {
+    height: 58vw;
+  }
+}
+.p-philosophy__text {
+  margin-top: 20px;
+  letter-spacing: -0.01em;
+}
+
+.p-business {
+  padding: 140px 0 160px;
+  @include m.mq(tab-l) {
+    padding: 130px 0 140px;
+  }
+  @include m.mq(tab) {
+    padding: 110px 0 120px;
+  }
+  @include m.mq(sm) {
+    padding: 70px 0;
+  }
+}
+.p-business__wrapper {
+  margin-top: 95px;
+  @include m.mq(tab-l) {
+    margin-top: 85px;
+  }
+  @include m.mq(tab) {
+    margin-top: 70px;
+  }
+  @include m.mq(sm) {
+    margin-top: 40px;
+  }
+}
+.p-business__wrap {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  &:first-child {
+    padding: 115px 0 130px;
+    @include m.mq(tab-l) {
+      padding: 105px 0 120px;
+    }
+    @include m.mq(tab) {
+      padding: 80px 0 90px;
+    }
+    @include m.mq(sm) {
+      padding: 50px 0 60px;
+    }
+    &::before,
+    &::after {
+      background-color: #f6f6f6;
+    }
+    &::before {
+      left: -130px;
+      @include m.mq(tab) {
+        left: -10vw;
+      }
+      @include m.mq(s-t) {
+        left: 0;
+        width: 100vw;
+        margin: 0 calc(50% - 50vw);
+      }
+    }
+    &::after {
+      left: -100%;
+      @include m.mq(s-t) {
+        display: none;
+      }
+    }
+  }
+  &:nth-child(2) {
+    padding: 160px 0;
+    margin-top: 150px;
+    @include m.mq(tab-l) {
+      padding: 140px 0;
+      margin-top: 130px;
+    }
+    @include m.mq(tab) {
+      padding: 110px 0;
+      margin-top: 100px;
+    }
+    @include m.mq(sm) {
+      padding: 60px 0;
+      margin-top: 0;
+    }
+    &::before,
+    &::after {
+      background-color: c.$navy;
+    }
+    &::before {
+      right: -130px;
+      @include m.mq(tab) {
+        right: -10vw;
+      }
+      @include m.mq(s-t) {
+        right: 0;
+        width: 100vw;
+        margin: 0 calc(50% - 50vw);
+      }
+    }
+    &::after {
+      right: -100%;
+      @include m.mq(s-t) {
+        display: none;
+      }
+    }
+    .c-heading {
+      margin: 0 auto;
+      &::before {
+        background-color: #fff;
+      }
+      .text {
+        color: c.$navy;
+      }
+    }
+    .p-business__contents {
+      margin-top: 90px;
+      @include m.mq(tab-l) {
+        margin-top: 80px;
+      }
+      @include m.mq(tab) {
+        margin-top: 70px;
+      }
+      @include m.mq(sm) {
+        margin-top: 50px;
+      }
+    }
+    .p-business__image {
+      margin: 0 0 0 -75px;
+      height: 450px;
+      width: 57.7%;
+      @include m.mq(tab-l) {
+        margin-left: -5vw;
+        height: 39vw;
+      }
+      @include m.mq(s-t) {
+        margin-left: 0;
+        width: 350px;
+        height: 240px;
+      }
+      @include m.mq(sm) {
+        width: 100%;
+        height: 56vw;
+      }
+    }
+    .p-business__desc {
+      width: 43.5%;
+      @include m.mq(s-t) {
+        width: 100%;
+      }
+    }
+    .p-business__title,
+    .p-business__text {
+      color: #fff;
+    }
+  }
+}
+.p-business__lead {
+  margin-top: 25px;
+  width: 780px;
+  @include m.mq(tab-l) {
+    width: 80%;
+  }
+  @include m.mq(tab) {
+    width: 90%;
+  }
+  @include m.mq(sm) {
+    width: 100%;
+  }
+}
+.p-business__mainImage {
+  height: 300px;
+  margin-top: 60px;
+  @include m.mq(tab-l) {
+    margin-top: 55px;
+  }
+  @include m.mq(tab) {
+    margin-top: 45px;
+    height: 240px;
+  }
+  @include m.mq(s-t) {
+    margin-top: 30px;
+    height: 38vw;
+  }
+}
+.p-business__contents {
+  margin-top: 170px;
+  @include m.mq(tab-l) {
+    margin-top: 150px;
+  }
+  @include m.mq(tab) {
+    margin-top: 120px;
+  }
+  @include m.mq(sm) {
+    margin-top: 80px;
+  }
+}
+.p-business__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include m.mq(s-t) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 30px 0;
+  }
+  &:nth-child(n + 2) {
+    margin-top: 95px;
+    @include m.mq(tab-l) {
+      margin-top: 85px;
+    }
+    @include m.mq(tab) {
+      margin-top: 70px;
+    }
+    @include m.mq(sm) {
+      margin-top: 50px;
+    }
+  }
+}
+.p-business__desc {
+  width: 38%;
+  @include m.mq(tab) {
+    width: 45%;
+  }
+  @include m.mq(s-t) {
+    width: 100%;
+    order: 2;
+  }
+}
+.p-business__title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  @include m.mq(tab-l) {
+    font-size: 3.4rem;
+  }
+  @include m.mq(tab) {
+    font-size: 3rem;
+  }
+  @include m.mq(sm) {
+    font-size: 2.4rem;
+  }
+}
+.p-business__image {
+  width: 60%;
+  margin-right: -45px;
+  @include m.mq(tab) {
+    width: 55%;
+  }
+  @include m.mq(s-t) {
+    width: 350px;
+    margin-right: 0;
+  }
+  @include m.mq(sm) {
+    width: 250px;
+  }
+}
+.p-business__textImage {
+  width: 250px;
+  margin-top: 25px;
+  @include m.mq(tab) {
+    max-width: 80%;
+  }
+  @include m.mq(sm) {
+    width: 180px;
+    margin-top: 20px;
+  }
+}
+.p-business__text {
+  margin-top: 25px;
+  @include m.mq(sm) {
+    margin-top: 20px;
+  }
+}

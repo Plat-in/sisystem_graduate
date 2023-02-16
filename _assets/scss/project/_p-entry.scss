@@ -1,0 +1,65 @@
+@charset "utf-8";
+@use "../foundation/mixin" as m;
+@use "../foundation/color" as c;
+
+.p-entry {
+  overflow: hidden;
+  z-index: 4;
+}
+.p-entry__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.p-entry__link {
+  padding: 75px 0 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  @include m.mq(tab-l) {
+    padding: 70px 0 90px;
+  }
+  @include m.mq(tab) {
+    padding: 60px 0 80px;
+  }
+  @include m.mq(sm) {
+    padding: 55px 0 70px;
+  }
+  &::before {
+    @include m.filter;
+    background-color: rgba(c.$blue, 0.6);
+  }
+}
+.p-entry__title {
+  width: 720px;
+  position: relative;
+  z-index: 1;
+}
+.p-entry__button {
+  width: 480px;
+  height: 90px;
+  background-color: c.$orange;
+  border: 1px solid c.$orange;
+  color: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  margin: -75px auto 0;
+  &::before {
+    content: "";
+    position: absolute;
+    @include m.centerY;
+    right: 25px;
+    width: 10px;
+    height: 15px;
+    background-color: #fff;
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
+  }
+}
