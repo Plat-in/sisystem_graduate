@@ -1,0 +1,8 @@
+@charset "utf-8";
+@use "../foundation/mixin" as m;
+@use "../foundation/color" as c;
+
+.c-anchorLink {
+  position: absolute;
+  top: -40px;
+}

@@ -1,0 +1,364 @@
+@charset "utf-8";
+@use "../../foundation/mixin" as m;
+@use "../../foundation/color" as c;
+
+.p-breadcrumbs {
+  background-color: c.$navy;
+}
+.p-breadcrumbs__link,
+.p-breadcrumbs__text {
+  color: #fff;
+}
+
+.p-interview {
+  padding: 140px 0 155px;
+  background-color: c.$navy;
+  @include m.mq(tab-l) {
+    padding: 120px 0 135px;
+  }
+  @include m.mq(tab) {
+    padding: 90px 0 105px;
+  }
+  @include m.mq(sm) {
+    padding: 60px 0 70px;
+  }
+}
+.p-interview__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+}
+.p-interview__wrapper {
+  margin-top: 150px;
+  @include m.mq(tab-l) {
+    margin-top: 130px;
+  }
+  @include m.mq(tab) {
+    margin-top: 100px;
+  }
+  @include m.mq(sm) {
+    margin-top: 60px;
+  }
+}
+.p-interview__wrap {
+  &:nth-child(n + 2) {
+    margin-top: 100px;
+    @include m.mq(tab-l) {
+      margin-top: 90px;
+    }
+    @include m.mq(tab) {
+      margin-top: 80px;
+    }
+    @include m.mq(sm) {
+      margin-top: 60px;
+    }
+  }
+}
+.p-interview__contents {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  @include m.mq(s-t) {
+    flex-wrap: wrap;
+    gap: 20px 0;
+  }
+  &:hover {
+    .p-interview__arrows {
+      background-color: rgba(c.$green, 0.6);
+    }
+  }
+}
+.p-interview__image {
+  width: 300px;
+  height: 200px;
+  @include m.mq(tab-l) {
+    width: 31%;
+    height: 18vw;
+  }
+  @include m.mq(tab) {
+    width: 34%;
+    height: 19vw;
+  }
+  @include m.mq(s-t) {
+    width: 400px;
+    height: 250px;
+  }
+  @include m.mq(sm) {
+    width: 100%;
+    height: 52vw;
+  }
+}
+.p-interview__desc {
+  margin-left: 55px;
+  position: relative;
+  width: 550px;
+  @include m.mq(tab-l) {
+    width: 50%;
+    margin-left: 45px;
+  }
+  @include m.mq(tab) {
+    width: 48%;
+    margin-left: 35px;
+  }
+  @include m.mq(s-t) {
+    width: 80%;
+    margin-left: 0;
+  }
+}
+.p-interview__catch {
+  color: c.$green;
+  font-size: 3rem;
+  line-height: 1.4;
+  @include m.mq(tab-l) {
+    font-size: 2.8rem;
+  }
+  @include m.mq(tab) {
+    font-size: 2.6rem;
+  }
+  @include m.mq(sm) {
+    font-size: 2.2rem;
+  }
+}
+.p-interview__department {
+  color: rgba(#fff, 0.6);
+  margin-top: 30px;
+  @include m.mq(tab) {
+    margin-top: 25px;
+  }
+  @include m.mq(sm) {
+    margin-top: 15px;
+  }
+}
+.p-interview__initial {
+  color: #fff;
+  font-size: 2rem;
+}
+.p-interview__arrows {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  height: 60px;
+  background-color: c.$green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  @include m.mq(tab) {
+    width: 55px;
+    height: 55px;
+  }
+}
+.p-interview__arrow {
+  width: 10px;
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+  .is-active & {
+    transform: rotate(-90deg);
+  }
+}
+.p-interview__main {
+  margin: 125px 0 0 auto;
+  width: 900px;
+  display: none;
+  @include m.mq(tab-l) {
+    width: 90%;
+  }
+  @include m.mq(tab) {
+    width: 95%;
+  }
+  @include m.mq(s-t) {
+    width: 100%;
+  }
+}
+.p-interview__profile {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  @include m.mq(s-t) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .p-interview__catch {
+    font-size: 4rem;
+    @include m.mq(tab-l) {
+      font-size: 3.6rem;
+    }
+    @include m.mq(tab) {
+      font-size: 3rem;
+    }
+    @include m.mq(sm) {
+      font-size: 2.4rem;
+    }
+  }
+  .p-interview__department {
+    margin-top: 40px;
+    @include m.mq(tab-l) {
+      margin-top: 35px;
+    }
+    @include m.mq(tab) {
+      margin-top: 30px;
+    }
+    @include m.mq(sm) {
+      margin-top: 15px;
+    }
+  }
+}
+.p-interview__profile__desc {
+  margin-top: 60px;
+  width: 460px;
+  @include m.mq(tab-l) {
+    width: 52%;
+    margin-top: 50px;
+  }
+  @include m.mq(tab) {
+    margin-top: 40px;
+  }
+  @include m.mq(s-t) {
+    width: 100%;
+    order: 2;
+    margin-top: 30px;
+  }
+}
+.p-interview__profile__image {
+  width: 380px;
+  height: 500px;
+  @include m.mq(tab-l) {
+    width: 340px;
+    height: 440px;
+  }
+  @include m.mq(tab) {
+    width: 280px;
+    height: 360px;
+  }
+  @include m.mq(s-t) {
+    width: 240px;
+    height: 300px;
+  }
+}
+.p-interview__main__contents {
+  padding: 170px 0 150px 130px;
+  margin: -100px 0 0 auto;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+  @include m.mq(tab-l) {
+    margin-top: -90px;
+    padding: 150px 40px 130px 100px;
+  }
+  @include m.mq(tab) {
+    margin-top: -80px;
+    padding: 140px 30px 110px 70px;
+  }
+  @include m.mq(s-t) {
+    margin-top: 40px;
+    padding: 60px 30px 70px 70px;
+  }
+  @include m.mq(sm) {
+    padding: 60px 10px 70px 30px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    right: -99%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+  }
+}
+.p-interview__faq {
+  &:nth-child(n + 2) {
+    margin-top: 120px;
+    @include m.mq(tab-l) {
+      margin-top: 100px;
+    }
+    @include m.mq(tab) {
+      margin-top: 80px;
+    }
+    @include m.mq(sm) {
+      margin-top: 50px;
+    }
+  }
+}
+.p-interview__faq__desc {
+  padding-left: 55px;
+  @include m.mq(tab-l) {
+    padding-left: 45px;
+  }
+  @include m.mq(tab) {
+    padding-left: 35px;
+  }
+  @include m.mq(sm) {
+    padding-left: 25px;
+  }
+}
+.p-interview__faq__title {
+  font-size: 3rem;
+  line-height: 1.4;
+  position: relative;
+  @include m.mq(tab-l) {
+    font-size: 2.8rem;
+  }
+  @include m.mq(tab) {
+    font-size: 2.6rem;
+  }
+  @include m.mq(sm) {
+    font-size: 2rem;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    @include m.centerY;
+    left: -55px;
+    height: 1px;
+    width: 35px;
+    background-color: rgba(c.$navy, 0.6);
+    @include m.mq(tab-l) {
+      left: -45px;
+      width: 35px;
+    }
+    @include m.mq(tab) {
+      left: -35px;
+      width: 25px;
+    }
+    @include m.mq(sm) {
+      left: -30px;
+      width: 20px;
+    }
+  }
+}
+.p-interview__faq__text {
+  margin-top: 45px;
+  @include m.mq(tab-l) {
+    margin-top: 40px;
+  }
+  @include m.mq(tab) {
+    margin-top: 30px;
+  }
+  @include m.mq(sm) {
+    margin-top: 20px;
+  }
+}
+.p-interview__faq__image {
+  margin-top: 50px;
+  height: 400px;
+  @include m.mq(tab-l) {
+    height: 35vw;
+    margin-top: 45px;
+  }
+  @include m.mq(tab) {
+    margin-top: 40px;
+  }
+  @include m.mq(sm) {
+    height: 42vw;
+    margin-top: 30px;
+  }
+}

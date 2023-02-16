@@ -1,0 +1,38 @@
+@charset "utf-8";
+@use "../foundation/mixin" as m;
+@use "../foundation/color" as c;
+
+.fadeUp {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.52, 0.72, 0.13, 1.01),
+    transform 0.6s cubic-bezier(0.52, 0.72, 0.13, 1.01);
+  &.view,
+  .view & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.c-image {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: calc(100% - 3px);
+    height: calc(100% - 3px);
+    border: 1px solid c.$navy;
+  }
+  img {
+    transform: translateY(100%);
+  }
+  &.view {
+    img {
+      transition: transform 1s 0.3s cubic-bezier(0.52, 0.72, 0.13, 1.01);
+      transform: translateY(0);
+    }
+  }
+}

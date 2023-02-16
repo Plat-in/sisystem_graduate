@@ -1,0 +1,67 @@
+@charset "utf-8";
+@use "../foundation/mixin" as m;
+@use "../foundation/color" as c;
+
+.c-contents {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  padding-left: 30px;
+  @include m.mq(tab-l) {
+    padding-left: 25px;
+  }
+  @include m.mq(tab) {
+    padding-left: 20px;
+  }
+  @include m.mq(sm) {
+    padding-left: 15px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #2c689b;
+  }
+}
+
+.c-desc {
+  position: relative;
+  margin: 15px 0 0 10px;
+  padding: 20px 0 0 30px;
+  @include m.mq(tab-l) {
+    padding-left: 25px;
+  }
+  @include m.mq(tab) {
+    padding: 15px 0 0 20px;
+  }
+  @include m.mq(sm) {
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #2c689b;
+  }
+  &.--flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .c-desc__text {
+      width: 59%;
+    }
+  }
+}
+
+.c-desc__text {
+  color: #fff;
+  line-height: 1.8;
+  .color {
+    color: c.$yellow;
+  }
+}

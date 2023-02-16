@@ -1,0 +1,166 @@
+	<?php require 'header.php'; ?>
+	<main class="l-main">
+		<div class="p-mvWrap">
+			<div class="p-mvWrap__image">
+				<img class="u-w100" src="./assets/images/top/mv.jpg" alt="メインビジュアル">
+			</div>
+			<section id="js-mv" class="p-mv">
+				<div class="c-inner">
+					<div class="p-mv__titles">
+						<h1 class="p-mv__title c-bold">夢<span class="small c-bold">を</span><span class="middle c-bold">持て、</span><br>覚醒<span class="middle c-bold">せよ</span></h1>
+						<img src="./assets/images/top/catch.png" class="p-mv__subTitle" alt="Update your best">
+					</div>
+					<a href="#next" class="p-mv__scroll">
+						<span class="p-mv__scroll__line"></span>
+						<p class="p-mv__scroll__text c-fontEn --bold">Scroll</p>
+					</a>
+				</div>
+			</section>
+			<section class="p-concept">
+				<div id="next" class="anchorLink"></div>
+				<div class="c-inner">
+					<p class="c-title__en --blue">Concept</p>
+					<div class="c-contents">
+						<h2 class="c-title__ja">コンセプト</h2>
+						<div class="p-concept__titleWrap iv">
+							<img src="./assets/images/top/catch.png" class="p-concept__subTitle" alt="Update your best">
+							<div class="p-concept__titles">
+								<h3 class="p-concept__title c-bold">夢<span class="middle c-bold">を</span>持て、覚醒<span class="middle c-bold">せよ</span></h3>
+							</div>
+						</div>
+						<div class="c-desc">
+							<div class="p-concept__texts iv">
+								<p class="p-concept__text c-bold">テキストテキストテキストテキスト</p>
+							</div>
+							<div class="p-concept__texts iv">
+								<p class="p-concept__text c-bold">テキストテキストテキストテキストテキスト</p>
+							</div>
+							<div class="p-concept__texts iv">
+								<p class="p-concept__text c-bold">テキストテキストテキストテキスト</p>
+							</div>
+						</div>
+					</div>
+					<a href="page-concept.php" class="c-button c-fontEn">More
+						<span class="c-button__arrow"></span>
+						<span class="c-button__square"></span>
+					</a>
+				</div>
+			</section>
+		</div>
+		<div class="p-wrap">
+			<section class="p-company">
+				<div class="p-cutting"></div>
+				<div class="c-inner">
+					<div class="p-company__wrap">
+						<div class="p-company__image">
+							<img loading="lazy" class="c-ofiCover" src="./assets/images/top/company_mv.jpg">
+						</div>
+						<div class="c-contents">
+							<h2 class="c-title__ja">会社紹介</h2>
+							<div class="c-desc">
+								<p class="c-desc__text">テキストテキストテキストテキストテキストテキストテキストテキスト<span class="color">テキストテキストテキスト</span>テキストテキストテキストテキスト</p>
+								<a href="page-company.php" class="c-button c-fontEn">More
+									<span class="c-button__arrow"></span>
+									<span class="c-button__square"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="p-data">
+				<div class="c-inner">
+					<div class="p-data__image">
+						<img loading="lazy" class="c-ofiCover" src="./assets/images/top/data_mv.jpg">
+					</div>
+					<div class="c-contents">
+						<h2 class="c-title__ja">データで⾒るエスアイ・システム</h2>
+						<div class="c-desc --flex">
+							<p class="c-desc__text">テキストテキストテキストテキストテキストテキストテキストテキスト<span class="color">テキストテキストテキスト</span>テキストテキストテキストテキスト</p>
+							<a href="page-data.php" class="c-button c-fontEn">More
+								<span class="c-button__arrow"></span>
+								<span class="c-button__square"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="p-2column">
+				<div class="p-cutting"></div>
+				<div class="c-inner">
+					<div class="p-2column__wrap">
+						<a href="page-works.php" class="p-works">
+							<img loading="lazy" class="p-titleImage" src="./assets/images/top/works_title.png" alt="works">
+							<div class="c-contents">
+								<h2 class="c-title__ja">仕事紹介・募集要項</h2>
+								<div class="c-desc">
+									<p class="c-desc__text">テキストテキストテキストテキストテキストテキストテキストテキスト<span class="color">テキストテキストテキスト</span>テキストテキストテキストテキスト</p>
+								</div>
+							</div>
+							<div class="c-button c-fontEn">
+								<span class="c-button__arrow"></span>
+							</div>
+						</a>
+						<a href="page-career.php" class="p-career">
+							<img loading="lazy" class="p-titleImage" src="./assets/images/top/career_title.png" alt="career">
+							<div class="c-contents">
+								<h2 class="c-title__ja">研修制度・キャリアパス</h2>
+								<div class="c-desc">
+									<p class="c-desc__text">テキストテキストテキストテキストテキストテキストテキストテキスト<span class="color">テキストテキストテキスト</span>テキストテキストテキストテキスト</p>
+								</div>
+							</div>
+							<div class="c-button c-fontEn">
+								<span class="c-button__arrow"></span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</section>
+		</div>
+		<section class="p-interview">
+			<div class="p-interview__images">
+				<div class="p-interview__image">
+					<img loading="lazy" class="c-ofiCover" src="./assets/images/top/interview_01.jpg">
+				</div>
+				<div class="p-interview__image">
+					<img loading="lazy" class="c-ofiCover" src="./assets/images/top/interview_02.jpg">
+				</div>
+				<div class="p-interview__image">
+					<img loading="lazy" class="c-ofiCover" src="./assets/images/top/interview_03.jpg">
+				</div>
+			</div>
+			<div class="c-inner">
+				<div class="c-contents">
+					<h2 class="c-title__ja">社員インタビュー</h2>
+					<div class="c-desc --flex">
+						<p class="c-desc__text">テキストテキストテキストテキストテキストテキストテキストテキスト<span class="color">テキストテキストテキスト</span>テキストテキストテキストテキスト</p>
+						<a href="page-data.php" class="c-button c-fontEn">More
+							<span class="c-button__arrow"></span>
+							<span class="c-button__square"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="p-crosstalk">
+			<div class="c-inner">
+				<div class="p-crosstalk__wrap">
+					<div class="p-crosstalk__image">
+						<img loading="lazy" class="c-ofiCover" src="./assets/images/top/crossTalk_mv.jpg">
+					</div>
+					<div class="c-contents">
+						<h2 class="c-title__ja">座談会</h2>
+						<div class="c-desc --flex">
+							<p class="c-desc__text">テキストテキストテキストテキストテキストテキストテキストテキスト<span class="color">テキストテキストテキスト</span>テキストテキストテキストテキスト</p>
+							<a href="page-data.php" class="c-button c-fontEn">More
+								<span class="c-button__arrow"></span>
+								<span class="c-button__square"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<?php require 'section-entry.php'; ?>
+	</main>
+	<?php require 'footer.php'; ?>
