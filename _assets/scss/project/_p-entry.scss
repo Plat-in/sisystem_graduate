@@ -30,15 +30,12 @@
   @include m.mq(sm) {
     padding: 55px 0 70px;
   }
-  &::before {
-    @include m.filter;
-    background-color: rgba(c.$blue, 0.6);
-  }
 }
 .p-entry__title {
   width: 720px;
   position: relative;
   z-index: 1;
+  opacity: 0.5;
 }
 .p-entry__button {
   width: 480px;

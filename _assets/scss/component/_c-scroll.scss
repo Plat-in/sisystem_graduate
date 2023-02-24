@@ -1,0 +1,29 @@
+@charset "utf-8";
+@use "../foundation/mixin" as m;
+@use "../foundation/color" as c;
+
+.c-scroll {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  gap: 0 100px;
+  margin: 0 calc(50% - 50vw);
+}
+.c-scroll__child {
+  display: flex;
+  gap: 0 100px;
+  animation: scroll-right 30s infinite linear;
+}
+@keyframes scroll-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.c-scroll__image {
+  width: 1000px;
+}

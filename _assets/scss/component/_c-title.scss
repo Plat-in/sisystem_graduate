@@ -23,6 +23,13 @@
   letter-spacing: -0.03em;
   padding-left: 20px;
   position: relative;
+  width: 6em;
+  border-right: 0.08em solid black;
+  overflow: hidden;
+  white-space: nowrap;
+  &.view {
+    animation: typing 1.8s steps(6, end) forwards, cursol 1s step-end infinite;
+  }
   &::before,
   &::after {
     content: "";
@@ -39,4 +46,22 @@
   &::after {
     left: 8px;
   }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+/*** カーソルが点滅するアニメーション ***/
+@keyframes cursol {
+  0% {
+    border-color: transparent;
+  } /*消滅*/
+  50% {
+    border-color: black;
+  } /*出現*/
+  100% {
+    border-color: transparent;
+  } /*消滅*/
 }

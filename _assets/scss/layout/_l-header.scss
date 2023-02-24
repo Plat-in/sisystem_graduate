@@ -11,7 +11,6 @@
   z-index: 100;
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
-  pointer-events: none;
   &.js-active {
     pointer-events: all;
     background-color: rgba(#fff, 0.6);
@@ -65,10 +64,8 @@
   height: 100%;
   @include m.flexCenter;
   background-color: c.$orange;
-  color: #fff;
-  transition: color 0.3s, background-color 0.3s;
-  font-size: 1.4rem;
   z-index: 10;
+  position: relative;
   @include m.mq(tab) {
     width: 125px;
   }
@@ -79,9 +76,26 @@
     width: 100px;
   }
   &:hover {
-    color: c.$blue;
-    background-color: #fff;
+    &::before {
+      width: 100%;
+    }
   }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #b9690e;
+    transition: width 0.4s;
+  }
+}
+.l-header__entry__text {
+  color: #fff;
+  font-size: 1.4rem;
+  position: relative;
+  z-index: 2;
 }
 
 .l-hamburger {

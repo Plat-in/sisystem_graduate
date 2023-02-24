@@ -54,7 +54,9 @@
       <span class="l-header__logo__text">キャリア採用サイト</span>
     </a>
     <div class="l-header__button u-d-f">
-      <a href="archive-entry.php" class="l-header__entry c-fontEn">ENTRY</a>
+      <a href="archive-entry.php" class="l-header__entry">
+        <span class="l-header__entry__text c-fontEn">Entry</span>
+      </a>
       <button class="l-hamburger" type="button" id="js-hamburger">
         <span class="l-hamburger__lines">
           <span class="l-hamburger__line"></span>

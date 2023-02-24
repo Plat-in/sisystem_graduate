@@ -23,7 +23,9 @@
   }
   &:hover {
     .c-button__square {
-      transform: rotate(45deg);
+      &::before {
+        width: 100%;
+      }
     }
   }
 }
@@ -67,6 +69,7 @@
   height: 60px;
   background-color: c.$orange;
   transition: transform 0.3s;
+  position: relative;
   @include m.mq(tab-l) {
     width: 55px;
     height: 55px;
@@ -78,5 +81,15 @@
   @include m.mq(sm) {
     width: 45px;
     height: 45px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #b9690e;
+    transition: width 0.4s;
   }
 }
