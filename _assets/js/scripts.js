@@ -199,3 +199,16 @@ for (const img of imgs) {
         console.log(error);
     });
 }
+
+window.addEventListener("load", function () {
+  const item = document.querySelectorAll(".p-entry__title");
+  for (let i = 0; i < item.length; i++) {
+    const elem = item[i];
+    //要素が画面内に入った時クラスを付与
+    setTimeout(function () {
+      elem.inview(function () {
+        elem.setAttribute("src", "./assets/images/common/catch_white.gif");
+      });
+    }, 400);
+  }
+});

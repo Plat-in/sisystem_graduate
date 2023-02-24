@@ -84,12 +84,18 @@
     left: 0;
     height: 100%;
     width: 0;
-    background-color: rgba(c.$blue, 0.4);
+    background-color: c.$blue;
     transition: width 0.3s;
   }
   &:hover {
     &::before {
       width: 100%;
+    }
+    .l-footer__corporate__text {
+      color: #fff;
+    }
+    .cls-1 {
+      fill: #fff;
     }
   }
 }
@@ -98,10 +104,16 @@
   font-size: 1.4rem;
   z-index: 1;
   text-align: center;
+  transition: color 0.3s;
 }
 .l-footer__icon {
   width: 20px;
   height: 12px;
+  position: relative;
+  z-index: 2;
+}
+.cls-1 {
+  transition: fill 0.3s;
 }
 .l-footer__list {
   width: 655px;
