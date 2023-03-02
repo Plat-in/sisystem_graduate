@@ -24,7 +24,6 @@
 
   if ($top === $self_name) {
     echo '<link rel="stylesheet" href="./assets/css/pages/top/index.min.css">';
-    echo '<script src="./assets/js/pages/top/index.min.js" defer></script>';
   } else if ($concept === $self_name) {
     echo '<link rel="stylesheet" href="./assets/css/pages/concept/index.min.css">';
   } else if ($company === $self_name) {
@@ -55,7 +54,7 @@
     </a>
     <div class="l-header__button u-d-f">
       <a href="archive-entry.php" class="l-header__entry">
-        <span class="l-header__entry__text c-fontEn">Entry</span>
+        <span class="l-header__entry__text c-fontEn">ENTRY</span>
       </a>
       <button class="l-hamburger" type="button" id="js-hamburger">
         <span class="l-hamburger__lines">

@@ -19,8 +19,19 @@
 }
 .p-mv {
   height: 100vh;
-  max-height: 720px;
-
+  max-height: 708px;
+  @include m.mq(tab-l) {
+    max-height: 673px;
+  }
+  @include m.mq(tab) {
+    max-height: 584px;
+  }
+  @include m.mq(s-t) {
+    max-height: 550px;
+  }
+  @include m.mq(sm) {
+    max-height: 488px;
+  }
   .c-inner {
     height: 100%;
     display: flex;
@@ -124,6 +135,12 @@
   @include m.mq(tab-l) {
     left: -30px;
   }
+  @include m.mq(tab) {
+    left: -2vw;
+  }
+  @include m.mq(s-t) {
+    left: 0;
+  }
 }
 .p-mv__scroll__line {
   width: 1px;
@@ -162,6 +179,22 @@
   }
 }
 
+.c-title__ja {
+  font-size: 2rem;
+  width: 6em;
+  padding-left: 20px;
+  &::before,
+  &::after {
+    width: 2px;
+    height: 22px;
+  }
+  &::after {
+    left: 8px;
+  }
+  &.view {
+    animation: typing 1.8s steps(6, end) forwards, cursor 1s step-end infinite;
+  }
+}
 .p-concept {
   padding: 92px 0 100px;
   @include m.mq(tab-l) {
@@ -171,7 +204,7 @@
     padding: 80px 0;
   }
   @include m.mq(sm) {
-    padding: 60px 0;
+    padding: 80px 0 60px;
   }
   &::before {
     @include m.filter;
@@ -185,7 +218,27 @@
     position: absolute;
     transform-origin: left;
     @include m.mq(note) {
-      left: -5vw;
+      left: -2vw;
+    }
+    @include m.mq(tab-l) {
+      width: 550px;
+      top: -152px;
+      left: 0.6vw;
+    }
+    @include m.mq(tab) {
+      width: 470px;
+      top: -134px;
+      left: 13px;
+    }
+    @include m.mq(s-t) {
+      width: 320px;
+      top: -116px;
+      left: 10px;
+    }
+    @include m.mq(sm) {
+      top: -80px;
+      left: -20px;
+      transform: rotate(0);
     }
   }
   .c-title__ja {
@@ -201,13 +254,28 @@
     @include m.mq(note) {
       margin-left: 100px;
     }
+    @include m.mq(tab) {
+      margin-left: 90px;
+    }
     @include m.mq(s-t) {
-      margin-left: 80px;
+      margin-left: 55px;
+    }
+    @include m.mq(sm) {
+      margin-left: 0;
     }
     &::before {
       background-color: #64a1d3;
       top: 40px;
       height: 60px;
+      @include m.mq(tab) {
+        height: 45px;
+      }
+      @include m.mq(s-t) {
+        height: 30px;
+      }
+      @include m.mq(sm) {
+        height: 22px;
+      }
     }
     &::after {
       content: "";
@@ -217,11 +285,32 @@
       width: 1px;
       height: calc(100% - 190px);
       background-color: #64a1d3;
+      @include m.mq(tab) {
+        height: calc(100% - 150px);
+      }
+      @include m.mq(s-t) {
+        height: calc(100% - 125px);
+      }
+      @include m.mq(sm) {
+        height: calc(100% - 100px);
+      }
     }
   }
   .c-desc {
     padding: 15px 0 0 35px;
     margin: 30px 0 0 40px;
+    @include m.mq(tab) {
+      padding: 15px 0 0 30px;
+      margin: 15px 0 0 30px;
+    }
+    @include m.mq(s-t) {
+      padding: 10px 0 0 20px;
+      margin: 15px 0 0 20px;
+    }
+    @include m.mq(sm) {
+      padding: 5px 0 0 15px;
+      margin: 10px 0 0 15px;
+    }
     &::before {
       background-color: #64a1d3;
     }
@@ -239,10 +328,14 @@
     margin-top: 85px;
   }
   @include m.mq(tab) {
-    margin-top: 70px;
+    margin: 65px 0 0 20px;
+  }
+  @include m.mq(s-t) {
+    margin: 50px 0 0 10px;
   }
   @include m.mq(sm) {
-    margin: 50px 0 0 15px;
+    margin: 40px 0 0 10px;
+    padding: 10px 8px;
   }
   &::before {
     content: "";
@@ -268,6 +361,21 @@
   top: -60px;
   z-index: 2;
   display: none;
+  @include m.mq(tab) {
+    width: 270px;
+    left: -25px;
+    top: -52px;
+  }
+  @include m.mq(s-t) {
+    width: 200px;
+    left: -20px;
+    top: -35px;
+  }
+  @include m.mq(sm) {
+    width: 150px;
+    left: -15px;
+    top: -28px;
+  }
   .view & {
     display: block;
   }
@@ -300,10 +408,13 @@
     font-size: 7rem;
   }
   @include m.mq(s-t) {
-    font-size: 6rem;
+    font-size: 5.4rem;
   }
   @include m.mq(sm) {
-    font-size: 5rem;
+    font-size: 4rem;
+  }
+  @include m.mq(sm-se) {
+    font-size: 3.8rem;
   }
   .middle {
     font-size: 7rem;
@@ -317,10 +428,10 @@
       font-size: 5.6rem;
     }
     @include m.mq(s-t) {
-      font-size: 4.6rem;
+      font-size: 4.2rem;
     }
     @include m.mq(sm) {
-      font-size: 3.6rem;
+      font-size: 3.4rem;
     }
   }
 }
@@ -328,6 +439,9 @@
   position: relative;
   display: table;
   padding: 5px 10px;
+  @include m.mq(sm) {
+    padding: 2px 5px;
+  }
   &:nth-child(n + 2) {
     margin-top: 10px;
   }
@@ -349,6 +463,7 @@
 }
 .p-concept__text {
   font-size: 2rem;
+  line-height: 1.4;
   color: c.$blue;
   position: relative;
   opacity: 0;
@@ -363,46 +478,79 @@
   background-color: c.$navy;
   z-index: 2;
 }
-.p-cutting {
-  position: absolute;
-  height: 720px;
-  width: 330px;
-  background: url(../../../../assets/images/common/bg01.jpg) center no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  z-index: -1;
-  .safari & {
-    background-attachment: initial;
-  }
-}
 .p-company {
   padding-top: 200px;
+  @include m.mq(tab-l) {
+    padding-top: 180px;
+  }
+  @include m.mq(tab) {
+    padding-top: 140px;
+  }
+  @include m.mq(s-t) {
+    padding-top: 110px;
+  }
+  @include m.mq(sm) {
+    padding-top: 80px;
+  }
+  .c-scroll {
+    @include m.mq(s-t) {
+      top: 270px;
+    }
+    @include m.mq(sm) {
+      top: 56vw;
+    }
+  }
   .c-contents {
     width: 470px;
     margin-top: 100px;
     @include m.mq(tab-l) {
       width: 44vw;
     }
+    @include m.mq(tab) {
+      width: 43vw;
+      margin-top: 60px;
+    }
+    @include m.mq(s-t) {
+      width: 100%;
+    }
+    @include m.mq(sm) {
+      margin-top: 8vw;
+    }
   }
   .c-title__ja {
     width: 5em;
+    @include m.mq(tab) {
+      width: 5.2em;
+    }
     &.view {
-      animation: typing 1.4s steps(5, end) forwards, cursol 1s step-end infinite;
+      animation: typing 1.4s steps(5, end) forwards, cursor 1s step-end infinite;
     }
   }
   .c-button {
     margin-top: 25px;
   }
-  .p-cutting {
+  .c-cutting {
     top: 100px;
     left: 0;
     clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    @include m.mq(tab-l) {
+      top: 80px;
+    }
+    @include m.mq(tab) {
+      top: 60px;
+    }
+    @include m.mq(sm) {
+      top: 40px;
+    }
   }
 }
 .p-company__wrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include m.mq(s-t) {
+    flex-wrap: wrap;
+  }
 }
 .p-company__image {
   width: 610px;
@@ -416,19 +564,60 @@
     width: 46vw;
     margin-left: -3vw;
   }
+  @include m.mq(tab) {
+    height: 36vw;
+    width: 47vw;
+    margin-left: -3vw;
+  }
+  @include m.mq(s-t) {
+    width: 420px;
+    height: 320px;
+    margin-left: 0;
+  }
+  @include m.mq(sm) {
+    width: 100%;
+    height: 65vw;
+  }
 }
 
 .p-data {
   padding-top: 200px;
+  @include m.mq(tab-l) {
+    padding-top: 180px;
+  }
+  @include m.mq(tab) {
+    padding-top: 140px;
+  }
+  @include m.mq(s-t) {
+    padding-top: 110px;
+  }
+  @include m.mq(sm) {
+    padding-top: 80px;
+  }
   .c-scroll {
     position: relative;
     margin-top: -60px;
+    @include m.mq(tab) {
+      margin-top: -50px;
+    }
+    @include m.mq(sm) {
+      margin-top: -30px;
+    }
   }
   .c-scroll__child {
     animation: scroll-right 25s infinite linear 0.5s both;
   }
   .c-scroll__image {
     width: 640px;
+    @include m.mq(tab-l) {
+      width: 600px;
+    }
+    @include m.mq(tab) {
+      width: 480px;
+    }
+    @include m.mq(sm) {
+      width: 300px;
+    }
   }
   .c-contents {
     width: 750px;
@@ -438,7 +627,7 @@
     width: 15.6em;
     &.view {
       animation: typing 3.6s steps(16, end) forwards,
-        cursol 1s step-end infinite;
+        cursor 1s step-end infinite;
     }
   }
   .c-desc__text {
@@ -447,16 +636,43 @@
 }
 .p-data__image {
   height: 300px;
-  margin-right: -100px;
   width: calc(100% + 100px);
+  @include m.mq(note) {
+    width: calc(100% + 4vw);
+  }
+  @include m.mq(tab-l) {
+    width: calc(100% + 3vw);
+    height: 280px;
+  }
+  @include m.mq(tab) {
+    height: 210px;
+  }
+  @include m.mq(s-t) {
+    height: 180px;
+  }
+  @include m.mq(sm) {
+    height: 120px;
+  }
 }
 
 .p-2column {
   padding: 200px 0;
+  @include m.mq(tab-l) {
+    padding: 180px 0;
+  }
+  @include m.mq(tab) {
+    padding: 140px 0;
+  }
+  @include m.mq(s-t) {
+    padding: 110px 0;
+  }
+  @include m.mq(sm) {
+    padding: 80px 0;
+  }
   .c-inner {
     max-width: 1220px;
   }
-  .p-cutting {
+  .c-cutting {
     right: 0;
     top: -240px;
     clip-path: polygon(100% 0, 0 50%, 100% 100%);
@@ -465,6 +681,10 @@
 .p-2column__wrap {
   display: flex;
   justify-content: space-between;
+  @include m.mq(tab) {
+    flex-wrap: wrap;
+    gap: 20px 0;
+  }
 }
 
 .p-works,
@@ -477,25 +697,55 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include m.mq(note) {
+    padding: 60px 40px;
+  }
+  @include m.mq(tab-l) {
+    padding: 50px 30px 60px;
+    height: initial;
+    min-height: 350px;
+  }
+  @include m.mq(tab) {
+    padding: 30px 20px 60px;
+    min-height: 320px;
+    width: 100%;
+  }
+  @include m.mq(sm) {
+    padding: 20px 15px 50px;
+    min-height: 300px;
+  }
   &::before {
     @include m.filter;
-    background-color: rgba(#000, 0.8);
+    background-color: rgba(#000, 0.6);
     z-index: 1;
   }
   .p-titleImage {
     width: 475px;
     position: relative;
     z-index: 2;
+    @include m.mq(note) {
+      width: 420px;
+      max-width: 100%;
+    }
+    @include m.mq(tab) {
+      width: 350px;
+    }
   }
   .c-contents {
     z-index: 2;
     height: 32px;
     transition: height 0.6s;
     overflow: hidden;
+    @include m.mq(tab-l) {
+      height: 100%;
+    }
     &::before {
       opacity: 0;
       transition: opacity 0.6s;
       background-color: #6d6d6d;
+      @include m.mq(tab-l) {
+        opacity: 1;
+      }
     }
   }
   .c-desc {
@@ -503,6 +753,9 @@
       opacity: 0;
       transition: opacity 0.6s;
       background-color: #6d6d6d;
+      @include m.mq(tab-l) {
+        opacity: 1;
+      }
     }
   }
   .c-button {
@@ -517,6 +770,13 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.6s;
+    @include m.mq(tab-l) {
+      opacity: 1;
+    }
+    @include m.mq(sm) {
+      width: 40px;
+      height: 40px;
+    }
   }
   .c-button__arrow {
     position: absolute;
@@ -524,6 +784,9 @@
     left: -15px;
     width: 45px;
     margin: 0;
+    @include m.mq(sm) {
+      width: 40px;
+    }
   }
   &:hover {
     .c-contents {
@@ -548,7 +811,7 @@
     width: 10em;
     &.view {
       animation: typing 2.8s steps(10, end) forwards,
-        cursol 1s step-end infinite;
+        cursor 1s step-end infinite;
     }
   }
 }
@@ -557,7 +820,7 @@
   .c-title__ja {
     width: 12em;
     &.view {
-      animation: typing 3s steps(12, end) forwards, cursol 1s step-end infinite;
+      animation: typing 3s steps(12, end) forwards, cursor 1s step-end infinite;
     }
   }
 }
@@ -567,11 +830,30 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include m.mq(tab-l) {
+    height: 650px;
+  }
+  @include m.mq(tab) {
+    height: 550px;
+  }
+  @include m.mq(sm) {
+    height: auto;
+    padding: 60px 0;
+  }
   .c-scroll {
     position: relative;
   }
   .c-scroll__image {
     width: 1010px;
+    @include m.mq(tab-l) {
+      width: 940px;
+    }
+    @include m.mq(tab) {
+      width: 800px;
+    }
+    @include m.mq(sm) {
+      width: 500px;
+    }
   }
   .c-contents {
     width: 750px;
@@ -585,7 +867,7 @@
     color: c.$yellow;
     width: 9em;
     &.view {
-      animation: typing 2.4s steps(9, end) forwards, cursol 1s step-end infinite;
+      animation: typing 2.4s steps(9, end) forwards, cursor 1s step-end infinite;
     }
     &::before,
     &::after {
@@ -616,18 +898,58 @@
 
 .p-crosstalk {
   padding: 110px 0;
+  @include m.mq(tab-l) {
+    padding: 100px 0;
+  }
+  @include m.mq(tab) {
+    padding: 80px 0;
+  }
+  @include m.mq(sm) {
+    padding: 60px 0;
+  }
   .c-scroll {
     top: 115px;
+    @include m.mq(tab-l) {
+      top: 8vw;
+    }
+    @include m.mq(tab) {
+      top: 4vw;
+    }
+    @include m.mq(s-t) {
+      top: 33vw;
+    }
   }
   .c-contents {
     width: 750px;
     margin-top: 100px;
+    @include m.mq(tab) {
+      width: 65%;
+      margin-top: 80px;
+    }
+    @include m.mq(s-t) {
+      width: 100%;
+      margin-top: 50px;
+    }
+  }
+  .c-desc.--flex {
+    @include m.mq(tab) {
+      flex-wrap: wrap;
+      gap: 35px 0;
+    }
+    .c-desc__text {
+      @include m.mq(tab) {
+        width: 100%;
+      }
+    }
   }
   .c-title__ja {
     color: c.$blue;
     width: 4em;
+    @include m.mq(tab) {
+      width: 4.2em;
+    }
     &.view {
-      animation: typing 1.2s steps(4, end) forwards, cursol 1s step-end infinite;
+      animation: typing 1.2s steps(4, end) forwards, cursor 1s step-end infinite;
     }
     &::before,
     &::after {
@@ -654,9 +976,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0 40px;
+  @include m.mq(tab) {
+    gap: 0 30px;
+  }
+  @include m.mq(s-t) {
+    flex-wrap: wrap;
+    gap: 0;
+  }
 }
 .p-crosstalk__image {
   margin-left: -100px;
   width: 325px;
   height: 585px;
+  @include m.mq(note) {
+    margin-left: -5vw;
+  }
+  @include m.mq(tab-l) {
+    margin-left: -3vw;
+    height: 48vw;
+    width: 31vw;
+  }
+  @include m.mq(tab) {
+    height: 54vw;
+  }
+  @include m.mq(s-t) {
+    width: 100%;
+    height: 40vw;
+    margin-left: 0;
+  }
 }

@@ -2,33 +2,54 @@
 @use "../foundation/mixin" as m;
 @use "../foundation/color" as c;
 
-.c-title__en {
-  font-size: 15.2rem;
-  letter-spacing: -0.01em;
-  line-height: 1;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  -webkit-text-stroke: 1px #95a628;
-  -webkit-text-fill-color: rgba(#fff, 0);
-  &.--blue {
-    -webkit-text-stroke: 1px #a2c7e5;
-    // color: #a2c7e5;
-    // opacity: 0.7;
-  }
-}
 .c-title__ja {
-  font-size: 2rem;
+  font-size: 4rem;
   color: c.$green;
   font-family: "Yu Gothic Pr6N B";
-  letter-spacing: -0.03em;
-  padding-left: 20px;
+  letter-spacing: initial;
+  padding-left: 40px;
   position: relative;
-  width: 6em;
+  width: 8em;
   border-right: 0.08em solid black;
   overflow: hidden;
   white-space: nowrap;
+  @include m.mq(tab-l) {
+    font-size: 3.8rem;
+  }
+  @include m.mq(tab) {
+    font-size: 3.2rem;
+    padding-left: 28px;
+  }
+  @include m.mq(sm) {
+    font-size: 2.4rem;
+    padding-left: 20px;
+  }
+  &.--blue {
+    color: c.$blue;
+    &::before,
+    &::after {
+      background-color: c.$blue;
+    }
+  }
+  &.--yellow {
+    color: c.$yellow;
+    &::before,
+    &::after {
+      background-color: c.$yellow;
+    }
+  }
+  &.--white {
+    color: #fff;
+    &::before,
+    &::after {
+      background-color: #fff;
+    }
+  }
+  &.--center {
+    margin: auto;
+  }
   &.view {
-    animation: typing 1.8s steps(6, end) forwards, cursol 1s step-end infinite;
+    animation: typing 1.8s steps(8, end) forwards, cursor 1s step-end infinite;
   }
   &::before,
   &::after {
@@ -37,14 +58,26 @@
     top: 50%;
     transform: rotate(20deg) translateY(-50%);
     width: 2px;
-    height: 22px;
+    height: 40px;
     background-color: c.$green;
+    @include m.mq(tab) {
+      height: 30px;
+    }
+    @include m.mq(sm) {
+      height: 20px;
+    }
   }
   &::before {
     left: 0;
   }
   &::after {
-    left: 8px;
+    left: 12px;
+    @include m.mq(tab) {
+      left: 10px;
+    }
+    @include m.mq(sm) {
+      left: 7px;
+    }
   }
 }
 @keyframes typing {
@@ -54,7 +87,7 @@
 }
 
 /*** カーソルが点滅するアニメーション ***/
-@keyframes cursol {
+@keyframes cursor {
   0% {
     border-color: transparent;
   } /*消滅*/
@@ -64,4 +97,29 @@
   100% {
     border-color: transparent;
   } /*消滅*/
+}
+
+.c-heading {
+  position: relative;
+  font-size: 3rem;
+  color: c.$green;
+  font-family: "Yu Gothic Pr6N B";
+  @include m.mq(tab-l) {
+    font-size: 2.8rem;
+  }
+  @include m.mq(tab) {
+    font-size: 2.6rem;
+  }
+  @include m.mq(s-t) {
+    font-size: 2.4rem;
+  }
+  @include m.mq(sm) {
+    font-size: 2.2rem;
+  }
+  &.--center {
+    text-align: center;
+  }
+  &.--blue {
+    color: c.$blue;
+  }
 }

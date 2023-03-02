@@ -23,7 +23,7 @@
 					<div class="c-contents">
 						<h2 class="c-title__ja iv">コンセプト</h2>
 						<div class="p-concept__titleWrap iv">
-							<img loading="lazy" src="./assets/images/top/catch_orange.svg" class="p-concept__subTitle gif" alt="Update your best">
+							<img loading="lazy" src="./assets/images/common/transparency.svg" class="p-concept__subTitle gif" alt="Update your best">
 							<div class="p-concept__titles">
 								<h3 class="p-concept__title c-bold">夢<span class="middle c-bold">を</span>持て、覚醒<span class="middle c-bold">せよ</span></h3>
 							</div>
@@ -49,7 +49,7 @@
 		</div>
 		<div class="p-wrap">
 			<section class="p-company">
-				<div class="p-cutting"></div>
+				<div class="c-cutting"></div>
 				<div class="c-inner">
 					<div class="p-company__wrap">
 						<div class="p-company__image">
@@ -118,11 +118,11 @@
 				</div>
 			</section>
 			<section class="p-2column">
-				<div class="p-cutting"></div>
+				<div class="c-cutting"></div>
 				<div class="c-inner">
 					<div class="p-2column__wrap">
 						<a href="page-works.php" class="p-works">
-							<img loading="lazy" class="p-titleImage" src="./assets/images/top/works_title.png" alt="works">
+							<img loading="lazy" class="p-titleImage" src="./assets/images/top/top_works.svg" alt="works">
 							<div class="c-contents">
 								<h2 class="c-title__ja iv">仕事紹介・募集要項</h2>
 								<div class="c-desc">
@@ -134,7 +134,7 @@
 							</div>
 						</a>
 						<a href="page-career.php" class="p-career">
-							<img loading="lazy" class="p-titleImage" src="./assets/images/top/career_title.png" alt="career">
+							<img loading="lazy" class="p-titleImage" src="./assets/images/top/top_career.svg" alt="career">
 							<div class="c-contents">
 								<h2 class="c-title__ja iv">研修制度・キャリアパス</h2>
 								<div class="c-desc">

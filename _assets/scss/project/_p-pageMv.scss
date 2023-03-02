@@ -4,12 +4,28 @@
 
 .p-pageMv {
   height: 480px;
+  margin-top: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 5;
+  @include m.mq(tab) {
+    margin-top: 55px;
+  }
+  @include m.mq(s-t) {
+    margin-top: 67px;
+  }
   @include m.mq(sm) {
     height: 350px;
+    margin-top: 54px;
+  }
+  .c-title__ja {
+    margin: 0 auto;
+    width: 6em;
+  }
+  .is-loaded & {
+    .c-title__ja {
+      animation: typing 1.8s steps(6, end) forwards, cursor 1s step-end infinite;
+    }
   }
 }
 .p-pageMv__image {
@@ -18,60 +34,155 @@
   left: 0;
   width: 100%;
   height: 100%;
-  img {
-    &:first-child {
-      @include m.mq(tab) {
-        display: none;
-      }
-    }
-    &:nth-child(2) {
-      display: none;
-      @include m.mq(tab) {
-        display: block;
-      }
-    }
+  &::before {
+    @include m.filter;
+    background-color: rgba(c.$navy, 0.8);
+    mix-blend-mode: hard-light;
   }
 }
 .p-pageMv__title {
   position: relative;
-  z-index: 2;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s cubic-bezier(0.52, 0.72, 0.13, 1.01) 0.3s,
-    transform 0.6s cubic-bezier(0.52, 0.72, 0.13, 1.01) 0.3s;
-  .is-loaded & {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
-.p-pageMv__title__en {
-  font-size: 9rem;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-  color: #fff;
+.p-pageMv__en {
+  width: 565px;
+  opacity: 0.7;
   @include m.mq(tab-l) {
-    font-size: 8.6rem;
+    width: 540px;
   }
   @include m.mq(tab) {
-    font-size: 8rem;
+    width: 500px;
   }
   @include m.mq(s-t) {
-    font-size: 7rem;
+    width: 450px;
   }
   @include m.mq(sm) {
-    font-size: 5rem;
+    width: 320px;
   }
   @include m.mq(sm-se) {
-    font-size: 4.6rem;
-  }
-  .c-fontEn {
-    color: c.$green;
-    line-height: 1.2;
-    letter-spacing: 0.01em;
+    width: 300px;
   }
 }
-.p-pageMv__title__ja {
+.p-pageMv__breadcrumbs {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: calc(100% - 30px);
+  z-index: 2;
+  gap: 0 8px;
+  a {
+    color: #fff;
+    transition: color 0.3s;
+    &:hover {
+      color: c.$orange;
+    }
+  }
+  span {
+    color: #fff;
+  }
+}
+.arrow {
+  width: 6px;
+  height: 6px;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(45deg);
+  transform-origin: top;
+}
+.p-pageMv__breadcrumbs__text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+}
+
+.p-lead {
+  margin-top: -110px;
+  z-index: 2;
+  @include m.mq(tab) {
+    margin-top: -100px;
+  }
+  @include m.mq(s-t) {
+    margin-top: -80px;
+  }
+  @include m.mq(sm) {
+    margin-top: -50px;
+  }
+}
+.p-lead__contents {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  width: 100%;
+  background-color: rgba(c.$navy, 0.8);
+  padding: 0 10px;
+  @include m.mq(tab-l) {
+    height: 230px;
+  }
+  @include m.mq(tab) {
+    height: 190px;
+  }
+  @include m.mq(s-t) {
+    height: 160px;
+  }
+  @include m.mq(sm) {
+    height: 105px;
+  }
+  @include m.mq(sm-se) {
+    height: 95px;
+  }
+  &::before {
+    @include m.filter;
+    background-image: url(../../assets/images/common/mv_bg.jpg);
+    @include m.bgCover;
+    opacity: 0.4;
+  }
+}
+.p-lead__heading {
+  font-size: 8.4rem;
+  line-height: 1.2;
+  font-style: italic;
   color: #fff;
-  display: block;
-  text-align: center;
+  position: relative;
+  z-index: 2;
+  font-feature-settings: "palt";
+  @include m.mq(tab-l) {
+    font-size: 8rem;
+  }
+  @include m.mq(tab) {
+    font-size: 7rem;
+  }
+  @include m.mq(s-t) {
+    font-size: 5.8rem;
+  }
+  @include m.mq(sm) {
+    font-size: 3.4rem;
+  }
+  @include m.mq(sm-se) {
+    font-size: 2.8rem;
+  }
+  .middle {
+    font-size: 6.4rem;
+    color: #fff;
+    line-height: 1.2;
+    font-style: italic;
+    @include m.mq(tab-l) {
+      font-size: 6rem;
+    }
+    @include m.mq(tab) {
+      font-size: 5.4rem;
+    }
+    @include m.mq(s-t) {
+      font-size: 4.6rem;
+    }
+    @include m.mq(sm) {
+      font-size: 2.6rem;
+    }
+    @include m.mq(sm-se) {
+      font-size: 2.4rem;
+    }
+  }
 }

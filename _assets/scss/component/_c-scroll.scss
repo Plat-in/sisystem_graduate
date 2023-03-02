@@ -8,13 +8,11 @@
   left: 0;
   overflow: hidden;
   display: flex;
-  gap: 0 100px;
   margin: 0 calc(50% - 50vw);
 }
 .c-scroll__child {
   display: flex;
-  gap: 0 100px;
-  animation: scroll-right 30s infinite linear;
+  animation: scroll-right 30s infinite linear 0.5s both;
 }
 @keyframes scroll-right {
   from {
@@ -26,4 +24,21 @@
 }
 .c-scroll__image {
   width: 1000px;
+  margin-right: 100px;
+  @include m.mq(tab-l) {
+    width: 920px;
+    margin-right: 80px;
+  }
+  @include m.mq(tab) {
+    width: 750px;
+    margin-right: 60px;
+  }
+  @include m.mq(s-t) {
+    width: 650px;
+    margin-right: 50px;
+  }
+  @include m.mq(sm) {
+    width: 110vw;
+    margin-right: 30px;
+  }
 }
