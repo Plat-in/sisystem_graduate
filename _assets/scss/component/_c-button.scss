@@ -62,6 +62,9 @@
       width: 8px;
       height: 12px;
     }
+    @include m.mq(sm) {
+      width: 6px;
+    }
   }
 }
 .c-button__square {

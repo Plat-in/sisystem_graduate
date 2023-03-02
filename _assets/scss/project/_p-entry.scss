@@ -28,7 +28,14 @@
     padding: 60px 0 80px;
   }
   @include m.mq(sm) {
-    padding: 55px 0 70px;
+    padding: 40px 0 60px;
+  }
+  &:hover {
+    .p-entry__button {
+      &::after {
+        width: 100%;
+      }
+    }
   }
 }
 .p-entry__title {
@@ -36,19 +43,31 @@
   position: relative;
   z-index: 1;
   opacity: 0.5;
+  @include m.mq(tab-l) {
+    width: 70%;
+  }
+  @include m.mq(sm) {
+    width: 80%;
+  }
 }
 .p-entry__button {
   width: 480px;
   height: 90px;
   background-color: c.$orange;
-  border: 1px solid c.$orange;
-  color: #fff;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.4rem;
   margin: -75px auto 0;
+  @include m.mq(tab-l) {
+    margin-top: -7vw;
+    width: 48vw;
+    height: 8vw;
+  }
+  @include m.mq(sm) {
+    width: 53vw;
+    height: 10vw;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -58,5 +77,36 @@
     height: 15px;
     background-color: #fff;
     clip-path: polygon(0 0, 0 100%, 100% 50%);
+    z-index: 2;
+    @include m.mq(tab) {
+      right: 20px;
+      width: 7px;
+      height: 14px;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #b9690e;
+    transition: width 0.4s;
+  }
+  .text {
+    position: relative;
+    color: #fff;
+    font-size: 2.4rem;
+    z-index: 1;
+    @include m.mq(tab-l) {
+      font-size: 2.2rem;
+    }
+    @include m.mq(tab) {
+      font-size: 2rem;
+    }
+    @include m.mq(sm) {
+      font-size: 1.6rem;
+    }
   }
 }

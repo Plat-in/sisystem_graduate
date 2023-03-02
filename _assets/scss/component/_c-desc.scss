@@ -11,10 +11,10 @@
     padding-left: 25px;
   }
   @include m.mq(tab) {
-    padding-left: 20px;
+    padding-left: 15px;
   }
   @include m.mq(sm) {
-    padding-left: 15px;
+    padding-left: 10px;
   }
   &::before {
     content: "";
@@ -33,11 +33,14 @@
   padding: 20px 0 0 30px;
   @include m.mq(tab-l) {
     padding-left: 25px;
-  }
-  @include m.mq(tab) {
     padding: 15px 0 0 20px;
   }
+  @include m.mq(tab) {
+    padding: 10px 0 0 15px;
+  }
   @include m.mq(sm) {
+    margin: 10px 0 0 8px;
+    padding: 5px 0 0 10px;
   }
   &::before {
     content: "";
@@ -52,16 +55,43 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    @include m.mq(s-t) {
+      flex-wrap: wrap;
+      gap: 35px 0;
+    }
     .c-desc__text {
       width: 59%;
+      @include m.mq(s-t) {
+        width: 100%;
+      }
     }
   }
 }
 
 .c-desc__text {
+  position: relative;
   color: #fff;
   line-height: 1.8;
-  .color {
-    color: c.$yellow;
+}
+.c-text {
+  position: relative;
+  margin: 15px 0 0 15px;
+  padding: 10px 0 0 25px;
+  color: #fff;
+  @include m.mq(s-t) {
+    margin: 10px 0 0 5px;
+    padding: 5px 0 0 15px;
   }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: #2c689b;
+  }
+}
+.color {
+  color: c.$yellow;
 }

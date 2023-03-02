@@ -2,395 +2,285 @@
 @use "../../foundation/mixin" as m;
 @use "../../foundation/color" as c;
 
-body,
-.l-main {
-  overflow: initial;
+.p-pageMv {
+  .c-title__ja {
+    width: 10.1em;
+  }
+  .is-loaded & {
+    .c-title__ja {
+      animation: typing 1.4s steps(10, end) forwards,
+        cursor 1s step-end infinite;
+    }
+  }
 }
+
 .p-works {
-  padding: 150px 0 160px;
-  @include m.mq(tab-l) {
-    padding: 130px 0 140px;
+  padding: 100px 0 200px;
+}
+.p-works__buttons {
+  display: flex;
+  gap: 0 0.2%;
+}
+.p-works__button {
+  width: 33.2%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: c.$navy;
+  border: 1px solid c.$navy;
+  color: #fff;
+  position: relative;
+  transition: color 0.3s, background-color 0.3s;
+  &::before {
+    content: "";
+    position: absolute;
+    @include m.centerY;
+    right: 25px;
+    background-color: #fff;
+    width: 12px;
+    height: 6px;
+    clip-path: polygon(100% 0, 0 0, 50% 100%);
+    transition: background-color 0.3s;
   }
-  @include m.mq(tab) {
-    padding: 100px 0 110px;
+  @include m.mq(hover) {
+    &:hover {
+      background-color: #fff;
+      color: c.$navy;
+      &::before {
+        background-color: c.$navy;
+      }
+    }
   }
-  @include m.mq(sm) {
-    padding: 60px 0 70px;
-  }
+}
+
+.p-works__wrapper {
+  margin-top: 170px;
 }
 .p-works__wrap {
-  display: flex;
-}
-.p-works__nav {
-  width: 25%;
-  height: max-content;
-  position: sticky;
-  top: 165px;
-  @include m.mq(tab-l) {
-    width: 23%;
-  }
-  @include m.mq(s-t) {
-    display: none;
-  }
-  .p-works__main & {
-    display: none;
-    @include m.mq(s-t) {
-      display: flex;
-      justify-content: center;
-      gap: 0 50px;
-      width: 100%;
-      position: relative;
-      top: 0;
-      padding: 15px 0;
-      border-top: 1px solid c.$navy;
-      border-bottom: 1px solid c.$navy;
-      margin-bottom: 30px;
+  &:nth-child(odd) {
+    .p-works__mainImage {
+      margin: 0 -128px 0 auto;
     }
-    @include m.mq(sm) {
-      gap: 0 6vw;
-      font-size: 1.8rem;
+    .p-works__contents {
+      margin: -320px 0 0 -128px;
+    }
+  }
+  &:nth-child(even) {
+    .p-works__mainImage {
+      margin: 0 0 0 -128px;
+    }
+    .p-works__contents {
+      margin: -320px -128px 0 auto;
     }
   }
 }
-.p-works__link {
-  color: #cacdd0;
-  display: block;
-  transition: color 0.3s;
-  @include m.mq(s-t) {
-    font-size: 2rem;
-  }
-  .js-view01 & {
-    &:first-child {
-      color: c.$navy;
-    }
-  }
-  .js-view02 & {
-    &:nth-child(2) {
-      color: c.$navy;
-    }
-  }
-  .js-view03 & {
-    &:nth-child(3) {
-      color: c.$navy;
-    }
-  }
-  &:nth-child(n + 2) {
-    margin-top: 12px;
-    @include m.mq(s-t) {
-      margin-top: 0;
-    }
-  }
-}
-.p-works__main {
-  width: 75%;
-  @include m.mq(tab-l) {
-    width: 77%;
-  }
-  @include m.mq(s-t) {
-    width: 100%;
+.p-works__mainImage {
+  width: 965px;
+  height: 500px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    @include m.centerX;
+    bottom: -350px;
+    width: 100vw;
+    height: 350px;
+    margin: 0 calc(50% - 50vw);
+    background-color: #e9f2f9;
   }
 }
 .p-works__contents {
   position: relative;
-  padding-bottom: 120px;
-  @include m.mq(tab-l) {
-    padding-bottom: 100px;
-  }
-  @include m.mq(tab) {
-    padding-bottom: 80px;
-  }
-  @include m.mq(sm) {
-    padding-bottom: 0;
-    border-bottom: initial;
-  }
-  &:not(:last-child) {
-    border-bottom: 1px solid c.$navy;
-  }
-  &:nth-child(n + 2) {
-    margin-top: 120px;
-    @include m.mq(tab-l) {
-      margin-top: 100px;
-    }
-    @include m.mq(tab) {
-      margin-top: 80px;
-    }
-    @include m.mq(sm) {
-      margin-top: 60px;
-    }
-  }
-}
-.anchorLink {
-  position: absolute;
-  top: -80px;
-}
-.p-works__category {
-  padding: 5px 10px;
+  z-index: 2;
+  width: 640px;
   background-color: c.$navy;
+  padding: 100px 10px 70px 125px;
+}
+.p-works__textImage {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 605px;
+}
+.p-works__heading {
+  font-size: 2rem;
   color: #fff;
-  font-size: 2.4rem;
-  line-height: 1;
-  display: table;
-  @include m.mq(tab) {
-    font-size: 2.2rem;
-  }
-  @include m.mq(sm) {
-    font-size: 2rem;
+}
+.c-desc,
+.c-text {
+  &::before {
+    background-color: #fff;
   }
 }
-.p-works__title {
-  margin-top: 30px;
-  font-size: 5rem;
-  line-height: 1.4;
-  color: c.$navy;
-  @include m.mq(tab-l) {
-    font-size: 4.6rem;
-  }
-  @include m.mq(tab) {
-    font-size: 4rem;
-  }
-  @include m.mq(sm) {
-    font-size: 2.8rem;
-    margin-top: 20px;
-  }
+.c-desc {
+  padding-top: 0;
 }
-.p-works__flex {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 70px;
-  @include m.mq(tab-l) {
-    margin-top: 60px;
-  }
-  @include m.mq(tab) {
-    margin-top: 45px;
-    flex-wrap: wrap;
-    gap: 20px 0;
-  }
-  @include m.mq(sm) {
-    margin-top: 30px;
-  }
-}
-.p-works__text {
-  width: 32%;
-  @include m.mq(tab-l) {
-    width: 34%;
-  }
-  @include m.mq(tab) {
-    order: 2;
-    width: 100%;
-  }
-}
-.p-works__image {
-  width: 58.4%;
-  height: 315px;
-  @include m.mq(tab) {
-    height: 45vw;
-    width: 100%;
-  }
-  @include m.mq(s-t) {
-    height: 55vw;
-  }
+.c-text {
+  margin-left: 0;
+  padding-bottom: 40px;
 }
 .p-works__list {
-  margin-top: 90px;
+  position: relative;
+  margin-top: 80px;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
-  @include m.mq(tab-l) {
-    margin-top: 80px;
-  }
-  @include m.mq(tab) {
-    margin-top: 70px;
-  }
-  @include m.mq(sm) {
-    margin-top: 50px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px 0;
-  }
 }
 .p-works__item {
-  width: 30.5%;
-  @include m.mq(tab-l) {
-    width: 31%;
-  }
-  @include m.mq(sm) {
-    width: 80%;
-  }
+  width: 32%;
 }
-.p-works__item__image {
-  height: 155px;
-  @include m.mq(tab-l) {
-    height: 14vw;
-  }
-  @include m.mq(s-t) {
-    height: 18vw;
-  }
-  @include m.mq(sm) {
-    height: 44vw;
-  }
+.p-works__image {
+  height: 220px;
 }
-.p-works__item__title {
+.p-works__title {
   font-size: 2rem;
-  line-height: 1.4;
-  margin: 25px 0 15px;
-  @include m.mq(tab) {
-    font-size: 1.8rem;
-  }
-  @include m.mq(sm) {
-    margin-top: 20px;
-  }
+  margin-top: 30px;
 }
-.p-works__accordion {
-  margin-top: 85px;
-  @include m.mq(tab-l) {
-    margin-top: 75px;
-  }
-  @include m.mq(tab) {
-    margin-top: 60px;
-  }
-  @include m.mq(sm) {
-    margin-top: 40px;
-  }
+.p-works__text {
+  margin-top: 25px;
 }
-.p-works__titles {
+
+.p-works__schedule {
   position: relative;
-  height: 90px;
+  margin: 165px calc(50% - 50vw) 0;
+  padding: 80px 0 100px;
   background-color: c.$navy;
-  gap: 0 10px;
-  cursor: pointer;
-  @include m.mq(tab) {
-    height: 80px;
+  .c-title__ja {
+    width: 10.1em;
+    &.view {
+      animation: typing 1.6s steps(10, end) forwards,
+        cursor 1s step-end infinite;
+    }
   }
-  @include m.mq(sm) {
-    height: 70px;
-    gap: 0 12px;
+  .c-cutting {
+    height: 580px;
+    width: 270px;
+    z-index: 0;
+    &:first-child {
+      clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      left: 0;
+      top: 50px;
+    }
+    &:nth-child(2) {
+      clip-path: polygon(0 50%, 100% 100%, 100% 0);
+      right: 0;
+      bottom: 50px;
+    }
   }
+}
+.p-works__timeTable {
+  width: 820px;
+  margin: 60px auto 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px 90px;
+  position: relative;
   &::before {
     content: "";
     position: absolute;
-  }
-  .text {
-    font-size: 2.4rem;
-    line-height: 1.4;
-    color: #fff;
-    @include m.mq(tab) {
-      font-size: 2.2rem;
-    }
-    @include m.mq(sm) {
-      font-size: 1.8rem;
-    }
-  }
-  .arrow {
-    width: 8px;
-    height: 8px;
-    transform: rotate(45deg);
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-    margin-top: -5px;
-    transition: transform 0.3s, margin-top 0.3s;
-    .is-active & {
-      transform: rotate(-135deg);
-      margin-top: 5px;
-    }
+    @include m.centerX;
+    top: 1px;
+    width: 6px;
+    height: 80%;
+    background-color: c.$orange;
   }
 }
-.p-works__accordion_inner {
-  display: none;
-}
-.p-works__table {
-  margin-top: 50px;
-  @include m.mq(tab) {
-    margin-top: 40px;
+.p-works__timeTable__contents {
+  position: relative;
+  width: 44.5%;
+  &:nth-child(odd) {
+    .p-works__timeTable__titles {
+      justify-content: space-between;
+    }
+    .p-works__timeTable__time {
+      order: 2;
+    }
+    .p-works__timeTable__circle {
+      left: initial;
+      right: -60px;
+      &::after {
+        right: initial;
+        left: -25px;
+      }
+    }
   }
-  @include m.mq(sm) {
-    margin-top: 30px;
-  }
-}
-.p-works__row {
   &:first-child {
-    .p-works__table__head {
-      border-top: 1px solid #fff;
-      @include m.mq(sm) {
-        border-top: initial;
-      }
-    }
-    .p-works__table__text {
-      border-top: 1px solid #cacaca;
-      @include m.mq(sm) {
-        border-top: initial;
-      }
-    }
+    margin-top: 140px;
+  }
+  &:nth-child(4) {
+    margin-top: -145px;
   }
   &:last-child {
-    .p-works__table__text {
-      border-bottom: 1px solid #cacaca;
+    margin-left: auto;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: -50px;
+      width: 10px;
+      height: 100%;
+      background-color: c.$navy;
+    }
+    .p-works__timeTable__circle {
+      left: -60px;
+      right: initial;
+      &::after {
+        right: -25px;
+        left: initial;
+      }
     }
   }
 }
-.p-works__table__head {
-  background-color: c.$navy;
-  padding: 20px 25px;
-  color: #fff;
-  text-align: center;
-  border-bottom: 1px solid #fff;
-  @include m.mq(tab) {
-    padding: 18px 20px;
-  }
-  @include m.mq(sm) {
-    display: block;
-    text-align: left;
-    border-bottom: initial;
-    padding: 15px;
-  }
-}
-.p-works__table__text {
-  padding: 20px 25px;
-  border-bottom: 1px solid #cacaca;
-  @include m.mq(tab) {
-    padding: 18px 20px;
-  }
-  @include m.mq(sm) {
-    display: block;
-    border-bottom: initial;
-    padding: 15px 15px 20px;
-  }
-}
-.p-works__button {
-  margin: 70px auto 0;
-  width: 260px;
-  height: 70px;
+.p-works__timeTable__titles {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-size: 2.4rem;
-  transition: opacity 0.3s;
+  gap: 0 15px;
   position: relative;
-  background: rgb(56, 199, 154);
-  background: linear-gradient(
-    0deg,
-    rgba(56, 199, 154, 1) 0%,
-    rgba(92, 223, 182, 1) 100%
-  );
-  @include m.mq(tab-l) {
-    margin-top: 65px;
+  margin-bottom: 30px;
+}
+.p-works__timeTable__time {
+  color: #fff;
+  font-size: 3rem;
+  line-height: 1;
+}
+.p-works__timeTable__heading {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #fff;
+}
+.p-works__timeTable__circle {
+  position: absolute;
+  top: 0;
+  left: -60px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: c.$orange;
+  &::before {
+    content: "";
+    @include m.center;
+    position: absolute;
+    background-color: #fff;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    z-index: 2;
   }
-  @include m.mq(tab) {
-    width: 240px;
-    height: 60px;
-    margin-top: 55px;
-  }
-  @include m.mq(sm) {
-    width: 200px;
-    height: 55px;
-    margin-top: 40px;
-  }
-  &:hover {
-    opacity: 0.8;
-  }
-  .arrow {
+  &::after {
+    content: "";
     position: absolute;
     @include m.centerY;
-    right: 8px;
-    width: 10px;
+    right: -25px;
+    height: 1px;
+    width: 25px;
+    background-color: c.$orange;
   }
+}
+.p-works__timeTable__image {
+  height: 155px;
+}
+.p-works__timeTable__text {
+  color: #fff;
+  margin-top: 10px;
 }

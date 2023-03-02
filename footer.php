@@ -8,7 +8,7 @@
           </a>
           <a href="https://www.si-system.jp/" target="_blank" rel="noopener noreferrer" class="l-footer__corporate">
             <p class="l-footer__corporate__text c-bold">企業サイトへ</p>
-            <svg id="_レイヤー_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 11" class="l-footer__icon"><defs><style>.cls-1{fill:#3886c7;}</style></defs><path class="cls-1" d="M11.38,3.69v6.21H1.03V3.69H11.38m1.03-1.03H0V10.93H12.41V2.66h0Z"/><polygon class="cls-1" points="15 8.86 13.97 8.86 13.97 1.1 2.07 1.1 2.07 .07 15 .07 15 8.86"/></svg>
+            <img loading="lazy" class="l-footer__icon" src="./assets/images/common/link.svg">
           </a>
         </div>
         <ul class="l-footer__list">
